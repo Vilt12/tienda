@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lunasima:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@500&display=swap');
+.section__2-box{
+    display: flex;
+
+   justify-content: center;
+ margin-top: 50px;
+
+ 
+}
+.section__2-box-titulo{
+ 
+    font-size: 25px;
+    text-align: center;
+    background: #000000e9;
+    color: #ffffff;
+    font-family: 'Lunasima', sans-serif;
+    width: 600px;
+    height: 300px;
+ 
+  
+  
+}
+.section__2-box-titulo h4{
+  font-family: 'Figtree', sans-serif;
+ padding: 20px 0 0 0;
+}
+.section__2-box-parrafo{
+  padding: 5px;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Figtree', sans-serif;
+}
