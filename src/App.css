@@ -43,5 +43,7 @@
   margin-top: 20vh;
 }
 body{
-  background: linear-gradient(#ffffff);
+  background:url("https://img.freepik.com/free-vector/top-view-cup-coffee-with-roasted-beans_52683-32340.jpg?w=2000");
+  background-size: cover;
+  background-position: center;
 }

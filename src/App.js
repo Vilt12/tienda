@@ -1,17 +1,27 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import Navbar from './nav-bar';
-import Section from './section-1';
-import Section2 from './section-2';
-import Foother from './foother';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import Login from "./login";
+import Register from "./register";
+import Main from './Main';
+import Menu from"./menu";
+import { Route,Routes } from 'react-router-dom';
+import Menucomida from './menu-comida';
+import Contacto from './contacto';
+
 function App() {
   return (
+
   <div>
- <Navbar></Navbar>
-  <Section></Section>
-  <Section2></Section2>
-  <Foother></Foother>
+  
+  <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/menu" element={<Menu/>}></Route>
+        <Route path='/menu-comida' element={<Menucomida/>}/>
+        <Route path="/contacto" element={<Contacto/>}></Route>
+      </Routes>
+     
   </div>
   
   

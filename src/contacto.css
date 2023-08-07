@@ -1,0 +1,27 @@
+.box-contacto{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.box-icons{
+    background: #000000e9;
+    border-bottom: 1px solid #ffffff;
+    border-top: 1px solid #ffffff;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box-icons a{
+    margin-right: 50px;
+    transition: 0.3s;
+   
+}
+.box-icons a:hover{
+    transform: translateY(-20px);
+    transition: 0.3s;
+}

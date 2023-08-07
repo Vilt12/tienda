@@ -1,5 +1,9 @@
-import "./navbar.css"
-import "./login"
+import React from 'react';
+import "./navbar.css";
+import "./login";
+import "./register";
+import "./menu"
+import { Link } from "react-router-dom";
 function Navbar(){
     return(
         <nav className="Barra__navegacion">
@@ -8,20 +12,20 @@ function Navbar(){
 
             
             <div className="Barra__navegacion-1">
-               <a href="/"><img src="https://cdn-icons-png.flaticon.com/128/2935/2935500.png" alt="" width={"80px"} height={"80px"} /></a>
-            
-                <a href="">Nuestro menu</a>
-                <a href="">Contacto</a>
-                <a href="">Informacion</a>
+                <Link referrerPolicy="no-referrer" crossOrigin="anonymus" to="/"><img src="https://cdn-icons-png.flaticon.com/128/2935/2935500.png" alt="" width={"80px"} height={"80px"} /> </Link>
+              {/*  <a href="/"><img src="https://cdn-icons-png.flaticon.com/128/2935/2935500.png" alt="" width={"80px"} height={"80px"} /></a> */}
+               <Link referrerPolicy="no-referrer" crossOrigin="anonymus" to="/menu">Nuestro Menu</Link>
+           
+               <Link to="/contacto">Contacto</Link>
+                
               
                 
             </div>
            
           </div>
              <div className="Barra__navegacion-usuario">
-          
-             <a href="./login.jsx">Iniciar sesion</a>
-             <a href="">Registrarse</a> 
+             <Link  referrerPolicy="no-referrer" crossOrigin="anonymus" to="/login"> Iniciar sesion</Link>
+              <Link referrerPolicy="no-referrer"  crossOrigin="anonymus" to="/register">Registrarse</Link>
              </div>
        
            

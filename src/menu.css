@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans&display=swap');
+
+
+.box-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.Super-box{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+
+}
+.box-menu-2{
+    height: 850px;
+    width: 1200px;
+    background: #000000da;
+    padding: 20px;
+    margin-top: 20vh;
+}
+.box-product{
+   background: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-around;
+   width: 500px;
+   padding: 20px;
+  margin: 15px 20px 0px 0px;
+  
+}
+.box-description2{
+  height: 100px;
+overflow-y:scroll ;
+text-align: justify;
+}
+
+.box-menu-tittle{
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 10vh;
+    color: #ffffff;
+}
+
+.box-menu-subtittle {
+ display: flex;
+    justify-content: space-between;
+    font-size: 5vh;
+    margin-top: 10vh;
+    font-family: 'Outfit', sans-serif;
+   border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+    
+}
+.box-menu-subtittle a{
+  text-decoration: none;
+  color: #ffffff;
+}
+.box-description h4{
+ 
+  text-align: center;
+ font-size: 25px;
+ font-family: 'Outfit', sans-serif;
+ font-family: 'Hind Siliguri', sans-serif;
+border-bottom: 1px solid #000000;
+}
+.description{
+    font-size: 16px;
+    font-family: 'Instrument Sans', sans-serif;
+    color: #515252;
+}
+.price{
+    font-size: 30px;
+    font-family: 'Instrument Sans', sans-serif;
+    text-align: center;
+  
+}
+.box-price-button{
+    
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0 0 0;
+}
+
+.button-29 {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+
+.button-29:hover {
+  box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-29:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}

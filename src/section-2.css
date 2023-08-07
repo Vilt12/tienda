@@ -14,18 +14,19 @@
  
     font-size: 25px;
     text-align: center;
-    background: #000000e9;
+    background: #000000d0;
     color: #ffffff;
     font-family: 'Lunasima', sans-serif;
     width: 600px;
     height: 300px;
+  border-bottom: 1px  solid white;
+  border-top: 1px  solid white;
  
-  
-  
 }
 .section__2-box-titulo h4{
   font-family: 'Figtree', sans-serif;
  padding: 20px 0 0 0;
+ border-bottom: 1px solid #ffffff;
 }
 .section__2-box-parrafo{
   padding: 5px;
