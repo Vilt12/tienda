@@ -4,13 +4,14 @@
     display: flex;
     height: 100vh;
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
+    background: #000000;
 }
 .box-icons{
     background: #000000e9;
-    border-bottom: 1px solid #ffffff;
-    border-top: 1px solid #ffffff;
-    width: 100%;
+
+  
+    width: 50%;
     height: 300px;
     display: flex;
     align-items: center;
@@ -19,9 +20,18 @@
 .box-icons a{
     margin-right: 50px;
     transition: 0.3s;
-   
+   animation: levitacion 1s infinite alternate;
 }
 .box-icons a:hover{
-    transform: translateY(-20px);
-    transition: 0.3s;
+   
+   filter: drop-shadow(#00fffb 0 0 10px);
+}
+
+@keyframes levitacion{
+    0%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(10px);
+    }
 }

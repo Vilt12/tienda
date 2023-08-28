@@ -38,7 +38,7 @@ transition: 0.2s;
 }
 .Barra__navegacion-1 a:hover{
 text-shadow: 0 0 2px #ffffff;
-font-size: 28.5px;
+font-size: 29px;
 transition: 0.2s;
 }
 
@@ -51,14 +51,16 @@ color: rgb(255, 255, 255);
 margin-right: 5vh;
 transition: 0.2s;
 }
-.Barra__navegacion-usuario a:hover{
-    
-    transition: 0.2s;
+.Barra__navegacion-usuario{
+    display: flex;
+    align-items: center;
+
 }
+
 .Barra__navegacion-usuario a:hover{
     text-shadow: 0 0 2px #ffffff;
     transition: 0.2s;
-    font-size: 21px;
+    font-size: 22px;
 }
 @keyframes navb{
     0%{
@@ -67,4 +69,42 @@ transition: 0.2s;
     100%{
   transform: translateY(0px);
     }
+}
+.Profile-box{
+    text-align: center;
+    color: #ffffff;
+
+}
+.Profile-box img{
+    border-radius: 30px;
+}
+.boton-salir{
+    border: none;
+    font-size: 24px;
+    background: none;
+    color: #ffffff;
+    cursor: pointer;
+    text-shadow: 0 0 2px #ffffff;
+  
+}
+.boton-salir:hover{
+    text-shadow: 0 0 3px #ffffff;
+    transition: 0.2s;
+    font-size: 22px;
+}
+.box-boton-salir{
+    margin-right: 10vh;
+}
+.boton-iniciar{
+    border: none;
+    font-size: 25px;
+    background: none;
+    color: #ffffff;
+    cursor: pointer;
+   text-shadow: 1px 2px 0px #000000;
+}
+.boton-iniciar:hover{
+    text-shadow: 0 0 3px #ffffff;
+    transition: 0.2s;
+    font-size: 27px;
 }

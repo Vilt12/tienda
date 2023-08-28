@@ -22,7 +22,9 @@ margin-top: 12.5vh;
    font-family: 'Yantramanav', sans-serif;
  
 }
-
+.section__box-1 b{
+    color: #d9ff00;
+}
 .section__box-2{
     display: flex;
     align-items: center;

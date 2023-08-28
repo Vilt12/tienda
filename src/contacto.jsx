@@ -14,6 +14,7 @@ function Contacto() {
    <Link to=""><img src="https://cdn-icons-png.flaticon.com/128/2111/2111463.png" alt="" /></Link>
    <Link to=""><img src="https://cdn-icons-png.flaticon.com/128/2111/2111728.png" alt="" /></Link>
    <Link to=""> <img src="https://cdn-icons-png.flaticon.com/128/732/732200.png" alt="" /></Link>
+
 </div>
   
  

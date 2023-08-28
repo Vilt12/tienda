@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans&display=swap');
 
+.carrito{
+  color: #fff;
 
+}
 .box-menu{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 120vh;
 }
 .Super-box{
   display: flex;
@@ -16,13 +19,16 @@
 
 }
 .box-menu-2{
-    height: 850px;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+    height: 950px;
     width: 1200px;
     background: #000000da;
     padding: 20px;
     margin-top: 20vh;
 }
 .box-product{
+  border-radius: 20px;
    background: rgb(255, 255, 255);
   display: flex;
   justify-content: space-around;
@@ -30,6 +36,11 @@
    padding: 20px;
   margin: 15px 20px 0px 0px;
   
+}
+.box-product:hover{
+  box-shadow: 4px 4px 4px #00ffe1;
+  transition: 0.2s;
+  transform: translateY(-5px);
 }
 .box-description2{
   height: 100px;
@@ -42,13 +53,24 @@ text-align: justify;
     font-family: 'Outfit', sans-serif;
     font-size: 10vh;
     color: #ffffff;
+   
 }
+
+
+.box-menu-subtittle a:hover{
+color: #00ffff;
+
+}
+.box-menu-subtittle a:active{
+  color: #5aff73;
+  
+  }
 
 .box-menu-subtittle {
  display: flex;
     justify-content: space-between;
     font-size: 5vh;
-    margin-top: 10vh;
+    margin-top: 5vh;
     font-family: 'Outfit', sans-serif;
    border-top: 1px solid #ffffff;
     border-bottom: 1px solid #ffffff;
@@ -119,7 +141,7 @@ border-bottom: 1px solid #000000;
 
 .button-29:hover {
   box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-  transform: translateY(-2px);
+  transform: translateY(-8px);
 }
 
 .button-29:active {

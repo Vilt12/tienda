@@ -2,9 +2,10 @@ import React from 'react';
 import "./menu.css";
 import Navbar  from "./nav-bar";
 import { Link } from "react-router-dom";
-
+import { useAuth0 } from '@auth0/auth0-react';
 function Menucomida() {
-    return(
+  const{isAuthenticated,user,id}=useAuth0();  
+  return(
         <div>   
             <Navbar></Navbar>
             
@@ -18,7 +19,9 @@ function Menucomida() {
          <div>
             <div className="box-menu-subtittle">
  <Link  to="/menu">Cafe</Link>
+ 
  <Link  to="/menu-comida">Comida</Link>
+
             </div>
            <div className="Super-box">
 

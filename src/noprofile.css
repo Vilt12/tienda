@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+.box-aviso{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   height: 100vh;
+   background-color: rgba(0, 0, 0, 0.753);
+   font-family: 'Arimo', sans-serif; 
+    font-size: 35px;
+}
+.box-aviso h4{
+  
+    color: #ffffff;
+ 
+}
+.box-aviso button{
+    color: aqua;
+    font-size: 35px;
+}
+.box-aviso button:hover{
+    font-size: 37px;
+}
