@@ -22,7 +22,8 @@
     transition: 0.3s;
     padding-top: 60px;
     border-right: 1px solid #ffffff;
-  
+ 
+
   }
   
   .navbar.open {
@@ -79,7 +80,20 @@
 
   }
   .box-total-product{
-background: #fffffff0;
+background: #fffffff0;   
+
+  }
+  .box-carrito{
+   
+    overflow-y: hidden; 
+    overflow-x: hidden;
+    max-height: 78vh;
+    padding-right: 0px;
+   
+  }
+  .box-carrito:hover{
+    overflow-y:auto ;
+    
   }
 
   @keyframes bounce {

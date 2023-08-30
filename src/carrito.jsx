@@ -3,13 +3,17 @@ import "./carrito.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { initMercadoPago, Wallet } from '@mercadopago/sdk-react';
+import axios from "axios";
+
 function Carrito({allProducts,
 	setAllProducts,
 	total,
 	countProducts,
 	setCountProducts,
 	setTotal,}) {  
-   
+    const [preferenceId, setPreferenceId] = useState(null);
+    initMercadoPago("APP_USR-9936f755-8524-42bb-9962-b65d7551d4e1");
     const [animateIcon, setAnimateIcon] = useState(false);
     const [navbarOpen, setNavbarOpen] = useState(false);
    
@@ -43,8 +47,38 @@ function Carrito({allProducts,
 		setCountProducts(countProducts - product.quantity);
 		setAllProducts(results);
     /* _______________________________________________________________Eliminar Productos________________________________________________________________________________________________________________ */
-	};
+	
+  };
+  const handleBuy = async () => {
+    const id = await createPreference(allProducts);
+    if (id) {
+      setPreferenceId(id);
+    }
+  };
+  const createPreference = async (products) => {
+    try {
+      const totalAmount = products.reduce(
+        (total, product) => total + product.price * product.quantity,
+        0
+      );
+  
+      const response = await axios.post("http://localhost:8080/create_preference", {
+        items: products.map((product) => ({
+          title: product.Nameproduct,
+          unit_price: product.price,
+          quantity: product.quantity,
+        })),
+        totalAmount: totalAmount,
+      });
+  
+      const { id } = response.data;
+      return id;
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
+ /* _______________________________________________________________________________________________________________________________________________________________________________________________    */
     return (
     
     <div className="App">
@@ -62,15 +96,20 @@ function Carrito({allProducts,
   
         <nav className={`navbar ${navbarOpen ? "open" : ""}`}>
       
-           
-          {allProducts.length ? (
-            <div>   <div className="box-total-product"> 
+             <div className="box-total-product"> 
          <p>Productos totales: {countProducts}</p>
               </div>  
-              
+            
               <div className="Box-total">
                <p>$Total <span>{total}</span></p>
             </div>
+          {allProducts.length ? (
+            <div className="box-carrito">   
+          
+            <button onClick={handleBuy}>Comprar</button>
+            {preferenceId && (
+  <Wallet initialization={{ preferenceId }} />
+)}
               {allProducts.map((product) => (
                 <ul key={product.id} className="carrito">
                   <li>
@@ -85,8 +124,9 @@ function Carrito({allProducts,
               ))}
               
                 
-           
+          
             </div>
+            
           ) : (
             <p className="carrito">No hay productos</p>
           )}

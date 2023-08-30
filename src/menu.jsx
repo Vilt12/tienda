@@ -6,6 +6,8 @@ import { data } from './data';
 import { useState } from 'react';
 import "./carrito.css"
 import Carrito from './carrito';
+import { initMercadoPago, Wallet } from '@mercadopago/sdk-react';
+import axios from "axios";
 
 
  export function ProductList({ allProducts,
@@ -16,9 +18,12 @@ import Carrito from './carrito';
   setTotal,}) {
  /* _______________________________________________________________________________________________________________________________________________________________________________ */
 
+ 
+
+/* ______________________________________________________________________ */
 
 
-
+/* ______________________________________________________________________ */
   const Agregar=(product)=>{
   
  
@@ -44,8 +49,31 @@ import Carrito from './carrito';
   console.log(allProducts);
  /* _______________________________________________________________________________________________________________________________________________________________________________ */
   
- 
- 
+/* const [preferenceId, setPreferenceId] = useState(null);
+
+ initMercadoPago("TEST-c88d4477-4485-44f0-adbe-77e3cc706146");
+
+ const createPreference = async (product) => {
+  try {
+    const response = await axios.post("http://localhost:8080/create_preference", {
+      description: product.Nameproduct,
+      price: product.price,
+      quantity: 1, // Puedes ajustar esto según sea necesario
+    });
+
+    const { id } = response.data;
+    return id;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+ const handleBuy = async (product) => {
+  const id = await createPreference(product);
+  if (id) {
+    setPreferenceId(id);
+  }
+}; */
   /* _______________________________________________________________________________________________________________________________________________________________________________ */
  
  return(
@@ -72,6 +100,8 @@ import Carrito from './carrito';
                                  <div className="box-price-button">
                                  <p className="price">${product.price}</p>
                         <button onClick={()=>Agregar(product)} className="button-29" > Agregar </button>
+                       {/*  <button onClick={() => handleBuy(product)}>Comprar</button>
+                        {preferenceId && <Wallet initialization={{ preferenceId }} /> } */}
                         </div>
                         
                          </div>     
@@ -102,7 +132,7 @@ function Menu() {
   const [allProducts, setAllProducts] = useState([]);
  const [total, setTotal] = useState(0);
  const [countProducts, setCountProducts] = useState(0);
- 
+
     return(
       
         <div>   
@@ -133,7 +163,9 @@ function Menu() {
  
             </div>
          
-           <ProductList allProducts={allProducts}
+           <ProductList
+           
+           allProducts={allProducts}
               setAllProducts={setAllProducts}
               countProducts={countProducts}
               setCountProducts={setCountProducts}

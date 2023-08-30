@@ -6,14 +6,16 @@ import { Route,Routes } from 'react-router-dom';
 import Menucomida from './menu-comida';
 import Contacto from './contacto';
 import NoProfile from './noprofile';
-import { useState } from 'react';
 import Carrito from './carrito';
 
 
 function App() {
-  const [allProducts, setAllProducts] = useState([]);
-	const [total, setTotal] = useState(0);
-	const [countProducts, setCountProducts] = useState(0);
+
+/* Conexion a base de datos */
+/* const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://127.0.0.1:27017/test'); */
+
   return (
 
 
