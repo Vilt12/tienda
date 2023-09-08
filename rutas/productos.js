@@ -5,9 +5,12 @@ const mongoose=require("mongoose")
 const eschema=mongoose.Schema
 
 const eschemaProducto=new eschema({
-    Nameproduct:String,
+   idProduct:String,
+  Nameproduct:String,
     price:Number,
-    description:String
+    description:String,
+    quantity:Number,
+    urlImage:String
 })
 
 const ModeloProducto=mongoose.model("Producto",eschemaProducto)
@@ -17,13 +20,16 @@ const ModeloProducto=mongoose.model("Producto",eschemaProducto)
 router.post("/agregarProducto", async (req, res) => {
     try {
       // Obtén los datos del producto desde el cuerpo de la solicitud (req.body)
-      const { Nameproduct, price, description } = req.body;
+      const { idProduct,Nameproduct, price, description,quantity,urlImage } = req.body;
   
       // Crea un nuevo documento utilizando el modelo
       const nuevoProducto = new ModeloProducto({
+        idProduct,
         Nameproduct,
         price,
         description,
+        quantity,
+        urlImage
       });
   
       // Guarda el nuevo producto en la base de datos

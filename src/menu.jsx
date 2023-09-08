@@ -2,11 +2,10 @@ import React from 'react';
 import "./menu.css";
 import Navbar  from "./nav-bar";
 import { Link } from "react-router-dom";
-import { data } from './data';
 import { useState } from 'react';
 import "./carrito.css"
 import Carrito from './carrito';
-
+import { useEffect } from 'react';
 
 
  export function ProductList({ allProducts,
@@ -14,7 +13,9 @@ import Carrito from './carrito';
   countProducts,
   setCountProducts,
   total,
-  setTotal,}) {
+  setTotal,
+productos,
+setProductos}) {
  /* _______________________________________________________________________________________________________________________________________________________________________________ */
 
  
@@ -46,77 +47,28 @@ import Carrito from './carrito';
 
   } 
   console.log(allProducts);
- /* _______________________________________________________________________________________________________________________________________________________________________________ */
-  
-/* const [preferenceId, setPreferenceId] = useState(null);
-
- initMercadoPago("TEST-c88d4477-4485-44f0-adbe-77e3cc706146");
-
- const createPreference = async (product) => {
-  try {
-    const response = await axios.post("http://localhost:8080/create_preference", {
-      description: product.Nameproduct,
-      price: product.price,
-      quantity: 1, // Puedes ajustar esto según sea necesario
-    });
-
-    const { id } = response.data;
-    return id;
-  } catch (error) {
-    console.log(error);
-  }
-};
-
- const handleBuy = async (product) => {
-  const id = await createPreference(product);
-  if (id) {
-    setPreferenceId(id);
-  }
-}; */
-  /* _______________________________________________________________________________________________________________________________________________________________________________ */
+ 
  
  return(
   <>
    
-  <div className='Super-box'>
- 
- 
-  {data.map(product=>(
-  
-<div key={product.id} className='box-product'>
-<img src={product.urlImage}  height="180" width="180" alt="" />
-                         <div className="box-description">
-            
-                        
-                             <h4>{product.Nameproduct}</h4>
-                      
-                         <div className="box-description2">
-                          <p className="description"> {product.description}</p>
-                        
-                        </div>
-                   
-                        
-                                 <div className="box-price-button">
-                                 <p className="price">${product.price}</p>
-                        <button onClick={()=>Agregar(product)} className="button-29" > Agregar </button>
-                   
-                        </div>
-                        
-                         </div>     
-                       
-</div> 
-
-
-
-  )
-
-  
-  
-  )}
-
-
-
-    </div>
+   <div className='Super-box'>
+            {productos.map(producto => (
+              <div key={producto.id} className='box-product'>
+                <img src={producto.urlImage} height="180" width="180" alt="" />
+                <div className="box-description">
+                  <h4>{producto.Nameproduct}</h4>
+                  <div className="box-description2">
+                    <p className="description">{producto.description}</p>
+                  </div>
+                  <div className="box-price-button">
+                    <p className="price">${producto.price}</p>
+                    <button onClick={() => Agregar(producto)} className="button-29">Agregar</button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
     </>
   );
 }
@@ -130,6 +82,25 @@ function Menu() {
   const [allProducts, setAllProducts] = useState([]);
  const [total, setTotal] = useState(0);
  const [countProducts, setCountProducts] = useState(0);
+
+ const [productos, setProductos] = useState([]);
+
+
+
+ useEffect(() => {
+   // Realiza la solicitud para obtener los productos desde tu base de datos
+   async function obtenerProductos() {
+     try {
+       const response = await fetch('/api/productos/productos');
+       const data = await response.json();
+       setProductos(data);
+     } catch (error) {
+       console.error('Error al obtener productos:', error);
+     }
+   }
+
+   obtenerProductos();
+ }, []);
 
     return(
       
@@ -162,7 +133,8 @@ function Menu() {
             </div>
          
            <ProductList
-           
+           productos={productos}
+           setProductos={setProductos}
            allProducts={allProducts}
               setAllProducts={setAllProducts}
               countProducts={countProducts}

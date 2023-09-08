@@ -1,20 +1,27 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
+import { v4 as uuidv4 } from 'uuid';
+
 
 function AgregarProducto() {
-    
+    // Generar un identificador único
+const uniqueId = uuidv4();
     const [Nameproduct,setNameproduct]=useState("")
 const [price,setprice]=useState("")
 const [description,setdescription]=useState("")
-    
+const [quantity,setquantity]=useState(1)
+const [urlImage,seturlImage]=useState("")
+const idProducto = uuidv4();
 
 function AgregarP() {
     const producto={
+        idProducto: idProducto,
         Nameproduct:Nameproduct,
         price:price,
         description:description,
-    
+        quantity:quantity,
+        urlImage:urlImage
     }
 
     console.log(producto);
@@ -28,7 +35,8 @@ function AgregarP() {
 
     return(
         <>
-        
+        <label>Imagen del producto</label>
+        <input type="text" value={urlImage} onChange={(e)=>{seturlImage(e.target.value)}}  />
         <label htmlFor="">Nombre del Producto</label>
         <input type="text" value={Nameproduct} onChange={(e)=>{setNameproduct(e.target.value)}} />
         <label htmlFor="">Precio</label>
