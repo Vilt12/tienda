@@ -44,8 +44,11 @@
 }
 .box-description2{
   height: 100px;
-overflow-y:scroll ;
+
 text-align: justify;
+}
+.box-description2:hover{
+  overflow-y:scroll ;
 }
 
 .box-menu-tittle{

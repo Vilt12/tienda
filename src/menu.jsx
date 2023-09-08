@@ -6,8 +6,7 @@ import { data } from './data';
 import { useState } from 'react';
 import "./carrito.css"
 import Carrito from './carrito';
-import { initMercadoPago, Wallet } from '@mercadopago/sdk-react';
-import axios from "axios";
+
 
 
  export function ProductList({ allProducts,
@@ -100,8 +99,7 @@ import axios from "axios";
                                  <div className="box-price-button">
                                  <p className="price">${product.price}</p>
                         <button onClick={()=>Agregar(product)} className="button-29" > Agregar </button>
-                       {/*  <button onClick={() => handleBuy(product)}>Comprar</button>
-                        {preferenceId && <Wallet initialization={{ preferenceId }} /> } */}
+                   
                         </div>
                         
                          </div>     

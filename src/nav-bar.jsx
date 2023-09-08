@@ -9,12 +9,12 @@ import { LogoutButton } from './Logout';
 import { Profile } from './Profile';
 import { useAuth0 } from '@auth0/auth0-react';
 
-
+import Administracion from './administracion';
 
 
 function Navbar(){
 
-    const{isAuthenticated,user,loginWithRedirect}=useAuth0();  
+    const{isAuthenticated,user,loginWithRedirect,email}=useAuth0();  
   
        return(
         <nav className="Barra__navegacion">
@@ -24,12 +24,13 @@ function Navbar(){
             
             <div className="Barra__navegacion-1">
                 <Link referrerPolicy="no-referrer" crossOrigin="anonymus" to="/"><img src="https://cdn-icons-png.flaticon.com/128/2935/2935500.png" alt="" width={"80px"} height={"80px"} /> </Link>
-             
+       
               {isAuthenticated?(<> <Link to="/menu">Nuestro menu</Link> </>):(<> <Link to="/noprofile">Nuestro menu</Link> </>)}
                <Link to="/contacto">Contacto</Link>
-               {user&&user.name==="Admin"?(<><Link>Agregar Producto</Link></>):(<></>)} 
+               
+               {/* (user&&user.name==="Admin")|| */(user&&user.email==="admin2125@gmail.com") ?(<><Link to="/administracion">Administracion</Link></>):(<></>)} 
          
-              
+           
                 
             </div>
            

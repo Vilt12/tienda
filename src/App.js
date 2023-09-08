@@ -6,16 +6,14 @@ import { Route,Routes } from 'react-router-dom';
 import Menucomida from './menu-comida';
 import Contacto from './contacto';
 import NoProfile from './noprofile';
-import Carrito from './carrito';
 
+import Administracion from './administracion';
 
 function App() {
+  
 
-/* Conexion a base de datos */
-/* const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/test'); */
-
+  
   return (
 
 
@@ -24,11 +22,11 @@ mongoose.connect('mongodb://127.0.0.1:27017/test'); */
   
   <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/menu" element={<Menu  > <Carrito ></Carrito></Menu>}></Route>
+        <Route path="/menu" element={<Menu></Menu>}></Route>
         <Route path='/menu-comida' element={<Menucomida/>}/>
         <Route path="noprofile" element={<NoProfile></NoProfile>}/>
         <Route path="/contacto" element={<Contacto/>}></Route>
-        
+        <Route path="/administracion" element={<Administracion/>}/>
       
       </Routes>
      

@@ -10,7 +10,7 @@
 .box-icons{
     background: #000000e9;
 
-  
+   gap: 100px; ;
     width: 50%;
     height: 300px;
     display: flex;
@@ -18,20 +18,21 @@
     justify-content: center;
 }
 .box-icons a{
-    margin-right: 50px;
-    transition: 0.3s;
-   animation: levitacion 1s infinite alternate;
-}
-.box-icons a:hover{
    
-   filter: drop-shadow(#00fffb 0 0 10px);
+ 
+   animation: levitacion 1s infinite alternate;
+  
 }
+
 
 @keyframes levitacion{
     0%{
         transform: translateY(0px);
+
     }
+  
     100%{
         transform: translateY(10px);
+  
     }
 }
