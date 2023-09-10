@@ -1,4 +1,22 @@
+/* import { useEffect } from "react";
 
+
+
+
+useEffect(() => {
+    // Realiza la solicitud para obtener los productos desde tu base de datos
+    async function obtenerProductos() {
+      try {
+        const response = await fetch('/api/productos/productos');
+        const data = await response.json();
+        setProductos(data);
+      } catch (error) {
+        console.error('Error al obtener productos:', error);
+      }
+    }
+ 
+    obtenerProductos();
+  }, []); */
 export const data= [
    
     {

@@ -24,52 +24,55 @@ setProductos}) {
 
 
 /* ______________________________________________________________________ */
-  const Agregar=(product)=>{
-  
- 
-   if(allProducts.find(item=>item.id===product.id)){
-    const products=allProducts.map(item=>item.id===product.id?{...item, quantity: item.quantity +1 }:item);
- 
-    
-  setTotal(total+product.price*product.quantity);
-  setCountProducts(countProducts+product.quantity);
-  setAllProducts([...allProducts,product]);
-   return setAllProducts([...products]);
-   } 
+const Agregar = (product) => {
+  const existingProductIndex = allProducts.findIndex(
+    (item) => item.Nameproduct === product.Nameproduct
+  );
 
-  
-  
-   
-    setTotal(total+product.price*product.quantity);
-  setCountProducts(countProducts+product.quantity);
-  setAllProducts([...allProducts,product]);
+  if (existingProductIndex !== -1) {
+    // El producto ya existe en el carrito, incrementa la cantidad
+    const updatedProducts = [...allProducts];
+    updatedProducts[existingProductIndex].quantity += 1;
+
+    setTotal(total + product.price);
+    setCountProducts(countProducts + 1);
+    setAllProducts(updatedProducts);
+  } else {
+    // El producto no existe en el carrito, agrégalo como nuevo
+    const newProduct = { ...product, quantity: 1 };
+
+    setTotal(total + product.price);
+    setCountProducts(countProducts + 1);
+    setAllProducts([...allProducts, newProduct]);
+  }
+};
 
 
-  } 
   console.log(allProducts);
  
  
  return(
   <>
-   
-   <div className='Super-box'>
-            {productos.map(producto => (
-              <div key={producto.id} className='box-product'>
-                <img src={producto.urlImage} height="180" width="180" alt="" />
-                <div className="box-description">
-                  <h4>{producto.Nameproduct}</h4>
-                  <div className="box-description2">
-                    <p className="description">{producto.description}</p>
-                  </div>
-                  <div className="box-price-button">
-                    <p className="price">${producto.price}</p>
-                    <button onClick={() => Agregar(producto)} className="button-29">Agregar</button>
-                  </div>
-                </div>
-              </div>
-            ))}
+  <div className="Super-box">
+    {productos.map((producto) => (
+      <div key={producto._id} className="box-product">
+        <img src={producto.urlImage} height="180" width="180" alt="" />
+        <div className="box-description">
+          <h4>{producto.Nameproduct}</h4>
+          <div className="box-description2">
+            <p className="description">{producto.description}</p>
           </div>
-    </>
+          <div className="box-price-button">
+            <p className="price">${producto.price}</p>
+            <button onClick={() => Agregar(producto)} className="button-29">
+              Agregar
+            </button>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</>
   );
 }
  /* ____________________________________________________________________________________Menu___________________________________________________________________________________________ */

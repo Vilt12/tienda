@@ -31,6 +31,40 @@ function Administracion() {
         console.error("Error al eliminar el producto:", error);
       });
   };
+
+  const [productoEditando, setProductoEditando] = useState(null);
+  
+  
+  const handleInputChange = (field, value) => {
+    setProductoEditando({
+      ...productoEditando,
+      [field]: value,
+    });
+  };
+  
+  const guardarCambios = (e) => {
+    e.preventDefault();
+    // Realiza una solicitud PUT al servidor para actualizar el producto
+    axios.put(`/api/productos/productos/${productoEditando._id}`, productoEditando)
+      .then((response) => {
+        alert(response.data.mensaje);
+        setProductoEditando(null); // Limpia el estado de productoEditando
+      
+      })
+      .catch((error) => {
+        console.error("Error al actualizar el producto:", error);
+      });
+  };
+  
+  const cancelarEdicion = () => {
+    setProductoEditando(null);
+  };
+
+
+
+
+  
+
 return(
   
   <>
@@ -48,9 +82,38 @@ return(
             <p>Precio: {producto.price}</p>
             <p>Descripción: {producto.description}</p>
             <button onClick={() => eliminarProducto(producto._id)}>Eliminar</button>
+            <button onClick={() => setProductoEditando(producto)}>Editar</button>
           </li>
         ))}
+
       </ul>
+      {productoEditando && (
+  <div>
+    <h2>Editar Producto</h2>
+    <form onSubmit={guardarCambios}>
+      <label>Nombre del Producto:</label>
+      <input
+        type="text"
+        value={productoEditando.Nameproduct}
+        onChange={(e) => handleInputChange("Nameproduct", e.target.value)}
+      />
+      <label>Precio:</label>
+      <input
+        type="number"
+        value={productoEditando.price}
+        onChange={(e) => handleInputChange("price", e.target.value)}
+      />
+      <label>Descripción:</label>
+      <textarea
+        value={productoEditando.description}
+        onChange={(e) => handleInputChange("description", e.target.value)}
+      ></textarea>
+      <button type="submit">Guardar Cambios</button>
+      <button onClick={cancelarEdicion}>Cancelar</button>
+    </form>
+  </div>
+)}
+
     </div>
 
 </div>

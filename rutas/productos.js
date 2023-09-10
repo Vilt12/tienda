@@ -5,7 +5,7 @@ const mongoose=require("mongoose")
 const eschema=mongoose.Schema
 
 const eschemaProducto=new eschema({
-   idProduct:String,
+  
   Nameproduct:String,
     price:Number,
     description:String,
@@ -20,11 +20,10 @@ const ModeloProducto=mongoose.model("Producto",eschemaProducto)
 router.post("/agregarProducto", async (req, res) => {
     try {
       // Obtén los datos del producto desde el cuerpo de la solicitud (req.body)
-      const { idProduct,Nameproduct, price, description,quantity,urlImage } = req.body;
+      const { Nameproduct, price, description,quantity,urlImage } = req.body;
   
       // Crea un nuevo documento utilizando el modelo
       const nuevoProducto = new ModeloProducto({
-        idProduct,
         Nameproduct,
         price,
         description,
@@ -63,6 +62,35 @@ router.delete("/productos/:id", async (req, res) => {
     } catch (error) {
       console.error("Error al eliminar el producto:", error);
       res.status(500).json({ error: "Ocurrió un error al eliminar el producto" });
+    }
+  });
+//Actualizar productos
+  router.put("/productos/:id", async (req, res) => {
+    const productId = req.params.id;
+    const { Nameproduct, price, description, quantity, urlImage } = req.body;
+  
+    try {
+      // Busca el producto por su ID y actualiza los campos con los nuevos valores
+      const productoActualizado = await ModeloProducto.findByIdAndUpdate(
+        productId,
+        {
+          Nameproduct,
+          price,
+          description,
+          quantity,
+          urlImage,
+        },
+        { new: true } // Esto devuelve el producto actualizado en lugar del producto antiguo
+      );
+  
+      if (!productoActualizado) {
+        return res.status(404).json({ error: "Producto no encontrado" });
+      }
+  
+      res.status(200).json({ mensaje: "Producto actualizado con éxito" });
+    } catch (error) {
+      console.error("Error al actualizar el producto:", error);
+      res.status(500).json({ error: "Ocurrió un error al actualizar el producto" });
     }
   });
 module.exports=router
