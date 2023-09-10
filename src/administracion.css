@@ -1,8 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
 
 .Formulario{
-display: flex;
-align-items: center;
-justify-content: center;
-    height: 100vh;
 
+
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center; 
+ 
+
+}
+.Super-box-agregar{
+    display: flex;
+   justify-content: center;
+}
+.box-agregar{
+   position:absolute;
+   margin-top: 17vh;
+  
+}
+
+.table_info {
+   border-collapse: collapse;
+ margin-top: 10vh;
+
+}
+.table_info th{
+    background: #272727;
+   padding: 10px;
+   text-align: center;
+   border: 1px solid #f6ff00;
+   color: #00ff2a;
+   font-size: 22px;
+   font-family: 'Nunito', sans-serif;
+   text-shadow: #00ff2a 0 0 2px;
+}
+
+.table_info td{
+    background: #000000e5;
+     color: #ffffff;
+     padding: 10px;
+     border: 1px solid #ffffff;
+     max-width: 500px;
+     text-align: center;
+     font-size: 20px;
+     font-family: 'Mukta', sans-serif;
+     text-shadow: 0 0 2px #ffffff;
+}
+.table_info td:hover{
+    background: #272727;
+    transition: 0.2s;
+}
+
+.box-button-action button{
+
+ font-size: 18px;
+ background: none;
+ border: 2px solid #ffffff;
+ color: #ffffff;
+ border-radius: 20px;
+ padding: 15px;
+ cursor: pointer;
+ margin: 10px;
+ box-shadow: 3px 3px 0px #ffffff;
+}
+.box-button-action button:hover{
+    background: #ffffff;
+    color: #000000;
+  
+    box-shadow: 3px 3px 0px #9a9a9a;
+}
+.box-button-action button:active{
+    transform: translateY(5px);
+    box-shadow: 1px 1px 0px #9a9a9a;
+}
+.box-edit{
+
+  
+  
+    width: 0;
+    height: 100%;
+    position: fixed;
+    top: 13vh;
+    left: 0;
+    background-color: #000000ef;
+    overflow-x: hidden;
+    padding-top: 10px;
+    border-right: 1px solid #ffffff; 
+    transition: 0.5s;
+    color: #ffffff;
+    font-family: 'Nunito', sans-serif;
+   
+}
+.box-edit.open{
+  width: 350px;
+  transition: 0.5s;
+
+}
+.edit-form{
+    margin-top: 2vh;
+}
+
+
+.box-edit h2{
+    text-align: center;
+    font-size: 25px;
+padding: 10px;
+color: #00ff2a;
+text-shadow: 0 0 5px #00ff2a;
+}
+
+.box-edit input{
+    width: 90%;
+    padding: 10px;
+   margin-top: 1vh;
+  border-radius: 10px;
+  background:#000000;
+  color: #ffffff;
+  border:1px solid #ffffff;
+  transition: 0.2s;
+  font-size: 17px;
+  font-family: 'Lato', sans-serif;
+}
+.box-edit input:focus{
+    border-radius: 30px;
+    background: #ffffff;
+    color: #000000;
+    transition: 0.2s;
+}
+.box-edit label{
+    font-size: 20px;
+  color:#00fbff;
+  text-align: center;
+    text-shadow: 0 0 3px #00fbff;
+}
+.box-edit textarea{
+    width: 95%;
+    height: 10vh;
+    border-radius: 5px;
+    background: #000000;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    font-size: 17px;
+    
+}
+.box-edit-button{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.box-edit-button button{
+    padding: 10px;
+    font-size: 18px;
+    font-family: 'Nunito', sans-serif;
+    background: none;
+    border:1px solid #ffffff;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px #ffffff;
+    margin-top: 2vh;
+}
+.box-edit-button button:hover{
+    background: #ffffff;
+    color: #000000;
+
+    box-shadow: 3px 3px 0px #9a9a9a;
+}
+.box-edit-button button:active{
+    transform: translateY(5px);
+    box-shadow: 1px 1px 0px #9a9a9a;
 }

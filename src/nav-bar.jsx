@@ -8,7 +8,7 @@ import { LoginButton } from './Login0';
 import { LogoutButton } from './Logout';
 import { Profile } from './Profile';
 import { useAuth0 } from '@auth0/auth0-react';
-
+import AgregarProducto from './AgregarProducto';
 import Administracion from './administracion';
 
 
@@ -28,7 +28,7 @@ function Navbar(){
               {isAuthenticated?(<> <Link to="/menu">Nuestro menu</Link> </>):(<> <Link to="/noprofile">Nuestro menu</Link> </>)}
                <Link to="/contacto">Contacto</Link>
                
-               {/* (user&&user.name==="Admin")|| */(user&&user.email==="admin2125@gmail.com") ?(<><Link to="/administracion">Administracion</Link></>):(<></>)} 
+               {/* (user&&user.name==="Admin")|| */(user&&user.email==="admin2125@gmail.com") ?(<><Link to="/administracion">Administracion</Link> <Link to="/AgregarProducto">Agregar producto</Link></>):(<></>)} 
          
            
                 

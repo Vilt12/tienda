@@ -32,9 +32,9 @@ function Administracion() {
       });
   };
 
-  const [productoEditando, setProductoEditando] = useState(null);
+  const [productoEditando, setProductoEditando] = useState(false);
   
-  
+
   const handleInputChange = (field, value) => {
     setProductoEditando({
       ...productoEditando,
@@ -48,6 +48,7 @@ function Administracion() {
     axios.put(`/api/productos/productos/${productoEditando._id}`, productoEditando)
       .then((response) => {
         alert(response.data.mensaje);
+        
         setProductoEditando(null); // Limpia el estado de productoEditando
       
       })
@@ -61,36 +62,69 @@ function Administracion() {
   };
 
 
-
+  const [editOper, setEditopen] = useState(false);
 
   
 
 return(
   
-  <>
+  <div > 
   
-  <Navbar></Navbar>
-<div className="Formulario">
-<AgregarProducto></AgregarProducto>
+    <Navbar></Navbar>
+ <div className="Super-box-agregar">
+ <div className="box-agregar">
+  
+ </div>
+ </div>
+  <div className="Formulario">
+ 
 
-<div>
-      <h2>Lista de Productos</h2>
-      <ul>
-        {productos.map((producto) => (
-          <li key={producto._id}>
-            <h3>{producto.Nameproduct}</h3>
-            <p>Precio: {producto.price}</p>
-            <p>Descripción: {producto.description}</p>
-            <button onClick={() => eliminarProducto(producto._id)}>Eliminar</button>
-            <button onClick={() => setProductoEditando(producto)}>Editar</button>
-          </li>
-        ))}
 
-      </ul>
+<div >
+      <div className="body-table">
+
+
+<table className="table_info">
+  <thead>
+    <tr>
+      <th>Imagen del producto</th>
+      <th>Nombre del producto</th>
+      <th>Precio</th>
+      <th className="table_info_descripcion">Descripción</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {productos.map((producto) => (
+      <tr key={producto._id}>
+        <td><img src={producto.urlImage} alt="" width={"80px"} height={"80px"} /></td>
+        <td>{producto.Nameproduct}</td>
+        <td>${producto.price}</td>
+        <td>{producto.description}</td>
+        <td className="box-button-action">
+          <button  onClick={() => eliminarProducto(producto._id)}>Eliminar</button>
+          <button  onClick={() => setProductoEditando(producto)}>Editar</button>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+</div>
       {productoEditando && (
-  <div>
-    <h2>Editar Producto</h2>
-    <form onSubmit={guardarCambios}>
+        
+  <div className={`box-edit ${handleInputChange ? "open" : ""}`}>
+    <div classname="edit-title">
+        <h2>Editar Producto</h2>
+    </div>
+  
+    <form className="edit-form" onSubmit={guardarCambios}>
+     
+    <label>Url del producto:</label>
+      <input
+        type="text"
+        value={productoEditando.urlImage}
+        onChange={(e) => handleInputChange("urlImage", e.target.value)}
+      />
       <label>Nombre del Producto:</label>
       <input
         type="text"
@@ -108,19 +142,23 @@ return(
         value={productoEditando.description}
         onChange={(e) => handleInputChange("description", e.target.value)}
       ></textarea>
-      <button type="submit">Guardar Cambios</button>
+      <div className="box-edit-button">
+           <button type="submit">Guardar Cambios</button>
       <button onClick={cancelarEdicion}>Cancelar</button>
+      </div>
+   
+     
     </form>
   </div>
 )}
-
+ 
     </div>
 
 </div>
    
     
     
-    </>
+    </div>
 )    
 }
 export default Administracion;

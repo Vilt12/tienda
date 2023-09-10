@@ -99,15 +99,16 @@ function Carrito({
 
         <div className="Box-total">
           <p>
-            $Total <span>{total}</span>
+            Total: <span>${total}</span>
           </p>
         </div>
         {allProducts.length ? (
           <div className="box-carrito">
-            <button onClick={handleBuy}>Comprar</button>
+            <button className="button-pay" onClick={handleBuy}>Pagar</button>
             {preferenceId && <Wallet initialization={{ preferenceId }} />}
             {allProducts.map((product) => (
-              <ul key={product.idProducto} className="carrito">
+            
+            <ul key={product.idProducto} className="carrito">
                 <li>
                   <img src={product.urlImage} height="80" width="80" alt="" />
                 </li>
@@ -125,7 +126,10 @@ function Carrito({
             ))}
           </div>
         ) : (
-          <p className="carrito">No hay productos</p>
+       
+             <p>No hay productos</p>
+          
+         
         )}
       </nav>
 

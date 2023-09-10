@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap');
 .App {
     text-align: center;
   }
@@ -27,7 +29,7 @@
   }
   
   .navbar.open {
-    width: 250px;
+    width: 350px;
   }
   
   .navbar a {
@@ -72,26 +74,55 @@
   }
   
   .Box-total{
- 
-    background: #ecececf0;
+background: #000000f0;   
+color: #ffffff;
+font-size: 20px;
+padding: 10px;
+border-bottom:1px solid #ffffff ;
+
 
   }
   .box-total-product{
-background: #fffffff0;   
+background: #000000f0;   
+color: #ffffff;
+font-size: 20px;
+padding: 10px;
+border:1px solid #ffffff ;
 
   }
   .box-carrito{
-   
+  
     overflow-y: hidden; 
     overflow-x: hidden;
     max-height: 78vh;
     padding-right: 0px;
-   
+    font-family: 'Nunito Sans', sans-serif;
   }
   .box-carrito:hover{
     overflow-y:auto ;
     
   }
+ 
+  .button-pay{
+    padding: 10px;
+    font-size: 17px;
+    margin-top: 1vh;
+    background: #ffffff;
+    border: #000000;
+    box-shadow: 3px 3px 0px #939393;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+  .button-pay:active{
+    transform: translateY(5px);
+    transform: translateX(5px);
+    box-shadow: 0 0 0;
+  }
+  .button-delete{
+    cursor: pointer;
+  }
+  
 
   @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {

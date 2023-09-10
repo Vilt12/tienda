@@ -21,11 +21,11 @@
 .box-menu-2{
   border: 2px solid #ffffff;
   border-radius: 20px;
-    height: 950px;
+  
     width: 1200px;
     background: #000000da;
     padding: 20px;
-    margin-top: 20vh;
+    margin-top: 30vh;
 }
 .box-product{
   border-radius: 20px;
