@@ -8,7 +8,7 @@ function Section2() {
         <div>
       <div className="section__2-box">
         <div className="section__2-box-img">
-            <img  src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2FmZSUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80" alt="" height={"300px"} width={"600px"} />
+            <img  src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2FmZSUyMHdhbGxwYXBlcnxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80" alt=""  />
         </div>
         <div className="section__2-box-titulo">
             <h4>Nuestro local</h4>
@@ -28,12 +28,12 @@ function Section2() {
             </div>
         </div>
         <div className="section__2-box-img">
-            <img src="https://images.wallpaperscraft.com/image/single/glass_coffee_light_115603_1920x1080.jpg" alt="" height={"300px"} width={"600px"} />
+            <img src="https://images.wallpaperscraft.com/image/single/glass_coffee_light_115603_1920x1080.jpg" alt=""  />
         </div>
       </div>
       <div className="section__2-box">
         <div className="section__2-box-img">
-            <img  src="https://static.vecteezy.com/system/resources/previews/015/194/832/non_2x/working-together-two-young-cafe-employees-indoors-conception-of-business-and-service-photo.jpg" alt="" height={"300px"} width={"600px"} />
+            <img  src="https://static.vecteezy.com/system/resources/previews/015/194/832/non_2x/working-together-two-young-cafe-employees-indoors-conception-of-business-and-service-photo.jpg" alt=""  />
         </div>
         <div className="section__2-box-titulo">
             <h4>¿Quienes somos?</h4>

@@ -24,7 +24,7 @@
     transition: 0.3s;
     padding-top: 10px;
     border-right: 1px solid #ffffff;
- 
+    z-index: 9999;
 
   }
   
@@ -123,7 +123,91 @@ border:1px solid #ffffff ;
     cursor: pointer;
   }
   
-
+@media screen and (max-width:576px) {
+  #toggleButton {
+  
+    background:none;
+    border:none;
+       font-size: 50px;
+       z-index: 999;
+       cursor: pointer;
+     }
+     
+     .navbar {
+       width: 0;
+       height: 100%;
+       position: fixed;
+       top: 10vh;
+       left: 0;
+       background-color: #000000cf;
+       overflow-x: hidden;
+       transition: 0.3s;
+       padding-top: 10px;
+       border-right: 1px solid #ffffff;
+       z-index: 9999;
+   
+     }
+     
+     .navbar.open {
+       width: 150px;
+     }
+     
+  
+     
+    
+     .content {
+       margin-left: 0;
+       padding: 20px;
+       transition: 0.3s;
+     }
+     
+     .content.open {
+       margin-left: 250px;
+     }
+    
+     .quantityP{
+       position: absolute;
+       font-size: 20px;
+       margin-left: 2.5vh;
+       margin-top: 0.5vh;
+       z-index: 10;
+     }
+    
+    
+     .box-carrito{
+     
+       overflow-y: hidden; 
+       overflow-x: hidden;
+       max-height: 78vh;
+       padding-right: 0px;
+       font-family: 'Nunito Sans', sans-serif;
+     }
+     .box-carrito:hover{
+       overflow-y:auto ;
+       
+     }
+    
+     .button-pay{
+       padding: 10px;
+       font-size: 17px;
+       margin-top: 1vh;
+       background: #ffffff;
+       border: #000000;
+       box-shadow: 3px 3px 0px #939393;
+       border-radius: 20px;
+       cursor: pointer;
+       font-family: 'Nunito Sans', sans-serif;
+     }
+     .button-pay:active{
+       transform: translateY(5px);
+       transform: translateX(5px);
+       box-shadow: 0 0 0;
+     }
+     .button-delete{
+       cursor: pointer;
+     }
+     
+}
   @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
       transform: translatey(0);

@@ -151,3 +151,174 @@ border-bottom: 1px solid #000000;
   box-shadow: #3c4fe0 0 3px 7px inset;
   transform: translateY(2px);
 }
+@media screen and (max-width:1300px) {
+  .box-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180vh;
+}
+@media screen and (max-width:1100px) {
+  .box-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180vh;
+}         
+.description{
+  font-size: 20px;
+
+}
+.box-description2{
+  height: 100px;
+  overflow-y:scroll ;
+text-align: justify;
+max-height: 70px;
+
+}
+ }
+
+
+}
+@media screen and (max-width:900px) {
+  .box-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200vh;
+}
+
+.Super-box{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+
+}
+.box-menu-2{
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  
+    width: 1200px;
+    background: #000000da;
+    padding: 20px;
+    margin-top: 1vh;
+}
+.box-product{
+  border-radius: 20px;
+   background: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-around;
+   width: 500px;
+   padding: 20px;
+  margin: 15px 20px 0px 0px;
+  
+}
+
+.box-description2{
+  height: 100px;
+  overflow-y:scroll ;
+text-align: justify;
+}
+
+.box-menu-tittle{
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 10vh;
+    color: #ffffff;
+   
+}
+
+
+.box-menu-subtittle a{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.description{
+    font-size: 20px;
+  
+}
+
+
+}
+@media screen and (max-width:576px){
+  .box-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 220vh;
+}
+.Super-box{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+
+}
+.box-menu-2{
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  
+    width: 1200px;
+    background: #000000da;
+    padding: 20px;
+    margin-top: 30vh;
+}
+.box-product{
+  border-radius: 20px;
+   background: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-around;
+   width: 350px;
+   padding: 20px;
+  margin: 15px 20px 0px 0px;
+  
+}
+
+.box-description2{
+  height: 100px;
+  overflow-y:scroll ;
+text-align: justify;
+max-height: 70px;
+
+}
+
+
+.box-menu-tittle{
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 10vh;
+    color: #ffffff;
+   
+}
+
+
+.box-description h4{
+ font-size: 20px;
+
+}
+.description{
+    font-size: 14px;
+
+
+}
+.price{
+    font-size: 20px;
+    font-family: 'Instrument Sans', sans-serif;
+    text-align: center;
+  
+}
+.box-price-button{
+    
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0 0 0;
+}
+.button-29{
+  font-size: 15px;
+  height: 38px;
+
+}
+}

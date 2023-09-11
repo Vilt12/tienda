@@ -108,3 +108,245 @@ transition: 0.2s;
     transition: 0.2s;
     font-size: 27px;
 }
+
+@media screen and ( max-width:576px)  {
+    .Barra__navegacion{
+        position: fixed; 
+        display:flex;
+         padding: 5px;
+         font-size: 20px;
+         background: #000000bb;
+         width: 100%;
+         border-bottom: 1px solid #ffffff;
+         box-shadow: 0 2px 5px #000000;
+         justify-content: center;
+         align-items: center;
+         font-family: 'Arimo', sans-serif;
+         animation-name: navb;
+         animation-duration: 0.5s;
+      overflow-x: scroll;
+     
+         
+     }
+     .Barra__navegacion-1{
+        display: flex;
+        justify-content: center;
+    align-items: center;
+    
+    }
+    .Barra__navegacion-1 a{
+    font-size: 25px;
+        margin-left: 25px;
+    text-decoration: none;
+    color: #ffffff;
+    text-shadow: #000000 2px 1px 0px;
+    transition: 0.2s;
+    text-align: center;
+
+    
+    }
+    
+    .Barra__navegacion-box{
+       
+    }
+    .Barra__navegacion-usuario a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    margin-right: 5vh;
+    transition: 0.2s;
+    }
+  
+    .Profile-box{
+        text-align: center;
+        color: #ffffff;
+    
+    }
+    .Profile-box img{
+        border-radius: 30px;
+    }
+    .boton-salir{
+        border: none;
+        font-size: 20px;
+        background: none;
+        color: #ffffff;
+        cursor: pointer;
+        text-shadow: 0 0 2px #ffffff;
+      
+    }
+ 
+    .box-boton-salir{
+        margin-right: 5vh;
+    }
+    .boton-iniciar{
+        border: none;
+        font-size: 20px;
+        background: none;
+        color: #ffffff;
+        cursor: pointer;
+       text-shadow: 1px 2px 0px #000000;
+    }
+
+ 
+}
+@media screen  and (max-width: 920px)  {
+    .Barra__navegacion{
+        position: fixed; 
+        display:flex;
+         padding: 5px;
+         font-size: 20px;
+         background: #000000bb;
+         width: 100%;
+         border-bottom: 1px solid #ffffff;
+         box-shadow: 0 2px 5px #000000;
+         justify-content: center;
+         align-items: center;
+         font-family: 'Arimo', sans-serif;
+         animation-name: navb;
+         animation-duration: 0.5s;
+      
+         
+     }
+     .Barra__navegacion-1{
+        display: flex;
+        justify-content: center;
+    align-items: center;
+    
+    }
+    .Barra__navegacion-1 a{
+    font-size: 25px;
+        margin-left: 25px;
+    text-decoration: none;
+    color: #ffffff;
+    text-shadow: #000000 2px 1px 0px;
+    transition: 0.2s;
+    text-align: center;
+
+    
+    }
+    
+    .Barra__navegacion-box{
+        margin-right: 2vh;
+    }
+    .Barra__navegacion-usuario a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    margin-right: 5vh;
+    transition: 0.2s;
+    }
+    .Barra__navegacion-usuario{
+        display: flex;
+        align-items: center;
+    
+    }
+    .Profile-box{
+        text-align: center;
+        color: #ffffff;
+    
+    }
+    .Profile-box img{
+        border-radius: 30px;
+    }
+    .boton-salir{
+        border: none;
+        font-size: 25px;
+        background: none;
+        color: #ffffff;
+        cursor: pointer;
+        text-shadow: 0 0 2px #ffffff;
+      
+    }
+ 
+    .box-boton-salir{
+        margin-right: 5vh;
+    }
+    .boton-iniciar{
+        border: none;
+        font-size: 20px;
+        background: none;
+        color: #ffffff;
+        cursor: pointer;
+       text-shadow: 1px 2px 0px #000000;
+    }
+
+  }
+  @media screen  and (max-width: 900px)  {
+    .Barra__navegacion{
+        position: fixed; 
+        display:flex;
+         padding: 5px;
+         font-size: 16px;
+         background: #000000bb;
+         width: 100%;
+         border-bottom: 1px solid #ffffff;
+         box-shadow: 0 2px 5px #000000;
+         justify-content: center;
+         align-items: center;
+         font-family: 'Arimo', sans-serif;
+         animation-name: navb;
+         animation-duration: 0.5s;
+      
+         
+     }
+     .Barra__navegacion-1{
+        display: flex;
+        justify-content: center;
+    align-items: center;
+    
+    }
+    .Barra__navegacion-1 a{
+    font-size: 20px;
+        margin-left: 25px;
+    text-decoration: none;
+    color: #ffffff;
+    text-shadow: #000000 2px 1px 0px;
+    transition: 0.2s;
+    text-align: center;
+
+    
+    }
+    
+    .Barra__navegacion-box{
+        margin-right: 2vh;
+    }
+    .Barra__navegacion-usuario a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    margin-right: 5vh;
+    transition: 0.2s;
+    }
+    .Barra__navegacion-usuario{
+        display: flex;
+        align-items: center;
+    
+    }
+    .Profile-box{
+        text-align: center;
+        color: #ffffff;
+    
+    }
+    .Profile-box img{
+        border-radius: 30px;
+    }
+    .boton-salir{
+        border: none;
+        font-size: 20px;
+        background: none;
+        color: #ffffff;
+        cursor: pointer;
+        text-shadow: 0 0 2px #ffffff;
+      
+    }
+ 
+    .box-boton-salir{
+        margin-right: 5vh;
+    }
+    .boton-iniciar{
+        border: none;
+        font-size: 20px;
+        background: none;
+        color: #ffffff;
+        cursor: pointer;
+       text-shadow: 1px 2px 0px #000000;
+    }
+
+  }
