@@ -86,7 +86,7 @@ function Carrito({
         >
           <FontAwesomeIcon
             icon={faShoppingCart}
-            style={{ color: "#ffffff" }}
+            style={{ color: "#000000" }}
             className={animateIcon ? "animate" : ""}
           ></FontAwesomeIcon>
         </button>
@@ -127,7 +127,7 @@ function Carrito({
           </div>
         ) : (
        
-             <p>No hay productos</p>
+      <p></p>
           
          
         )}

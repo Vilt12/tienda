@@ -68,14 +68,10 @@ function Administracion() {
 
 return(
   
-  <div > 
+  <div className="Super-box-administracion" > 
   
     <Navbar></Navbar>
- <div className="Super-box-agregar">
- <div className="box-agregar">
-  
- </div>
- </div>
+ 
   <div className="Formulario">
  
 
@@ -102,8 +98,8 @@ return(
         <td>${producto.price}</td>
         <td>{producto.description}</td>
         <td className="box-button-action">
-          <button  onClick={() => eliminarProducto(producto._id)}>Eliminar</button>
-          <button  onClick={() => setProductoEditando(producto)}>Editar</button>
+          <button className="box-button-action-delete" onClick={() => eliminarProducto(producto._id)}>Eliminar</button>
+          <button className="box-button-action-edit"  onClick={() => setProductoEditando(producto)}>Editar</button>
         </td>
       </tr>
     ))}

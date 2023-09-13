@@ -7,11 +7,12 @@ import Navbar from "./nav-bar";
 
 function Main() {
     return(
-        <div>
+        <div classname="body-main">
           
             <Navbar></Navbar>  
             <Section></Section>
             <Section2></Section2>
+            
             <Foother></Foother>
           
         </div>

@@ -5,7 +5,9 @@
     margin: 0;
     padding: 0;
 }
-
+.Super-box-administracion{
+    background: #fffdeb;
+}
 .Formulario{
 
 
@@ -31,13 +33,13 @@
 
 .table_info {
    border-collapse: collapse;
- margin-top: 10vh;
+ margin-top: 8vh;
 
 
 }
 .table_info th{
-    background: #272727;
-   padding: 10px;
+    background: #0a0a0a;
+   padding: 5px;
    text-align: center;
    border: 1px solid #f6ff00;
    color: #00ff2a;
@@ -49,9 +51,9 @@
 .table_info td{
     background: #000000e5;
      color: #ffffff;
-     padding: 10px;
+     padding: 5px;
      border: 1px solid #ffffff;
-     max-width: 500px;
+    
      text-align: center;
      font-size: 20px;
      font-family: 'Mukta', sans-serif;
@@ -66,23 +68,23 @@
 
  font-size: 18px;
  background: none;
- border: 2px solid #ffffff;
- color: #ffffff;
- border-radius: 20px;
  padding: 15px;
  cursor: pointer;
  margin: 10px;
- box-shadow: 3px 3px 0px #ffffff;
+ border-radius: 20px;
+
 }
-.box-button-action button:hover{
-    background: #ffffff;
-    color: #000000;
-  
-    box-shadow: 3px 3px 0px #9a9a9a;
+.box-button-action-delete{
+    color: #ff0000;
+    border: 1px solid #ff0000;
+    box-shadow: 0 0 4px #ff0000;
+    text-shadow: 0 0 4px #ff0000;
 }
-.box-button-action button:active{
-    transform: translateY(5px);
-    box-shadow: 1px 1px 0px #9a9a9a;
+.box-button-action-edit{
+    color: #f6ff00;
+    border: 1px solid #f6ff00;
+    box-shadow: 0 0 4px #f6ff00;
+    text-shadow: 0 0 4px #f6ff00;
 }
 .box-edit{
 

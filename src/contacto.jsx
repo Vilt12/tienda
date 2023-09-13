@@ -8,19 +8,62 @@ function Contacto() {
   return(
         <div>
   <Navbar></Navbar>
-  <div className="box-contacto">
-<div className="box-icons">
-   <Link to=""><img   src="https://cdn-icons-png.flaticon.com/128/733/733547.png" alt="" /></Link>
-   <Link to=""><img   src="https://cdn-icons-png.flaticon.com/128/2111/2111463.png" alt="" /></Link>
-   <Link to=""><img  src="https://cdn-icons-png.flaticon.com/128/2111/2111728.png" alt="" /></Link>
-   <Link to=""> <img  src="https://cdn-icons-png.flaticon.com/128/732/732200.png" alt="" /></Link>
+ 
+     
+        
+             <div className="section__box-contacto">
+        
+           <div  className='section__box-child-contacto'> 
+      
+            <div className="section__box-1-contacto">
+               <h4>Contactanos</h4>
+               <div className='section__box-2-contacto'>
+                
+                <p>"¡Conéctate con nosotros en nuestras redes sociales y en WhatsApp para estar al tanto de las últimas novedades y responderemos a tus preguntas!" </p>
+               </div>
+ <div className='section__box-redesSociales'>
 
-</div>
+             
+               
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/800px-WhatsApp.svg.png" alt="" />
+          
+                  
+                    <img src="https://cdn.pixabay.com/photo/2021/06/15/12/17/instagram-6338401_1280.png" alt="" />
+                    <img src="https://www.facebook.com/images/fb_icon_325x325.png" alt="" />
+                    
+                    </div>
+                </div>
+                 
+             
+
+              
+               
+           </div>
+                 
+          
+              
+               
+              
+          
+        </div>   
+           
+             
+             
+         </div>
+     
+        
+       
+    
+     
+   
+
+
+
+
+
   
  
-  </div>
- 
-        </div>
+        
     )
 }
 export default Contacto;

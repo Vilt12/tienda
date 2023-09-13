@@ -25,7 +25,7 @@ function Navbar(){
             <div className="Barra__navegacion-1">
                 <Link referrerPolicy="no-referrer" crossOrigin="anonymus" to="/"><img src="https://cdn-icons-png.flaticon.com/128/2935/2935500.png" alt="" width={"80px"} height={"80px"} /> </Link>
        
-              {isAuthenticated?(<> <Link to="/menu">Nuestro menu</Link> </>):(<> <Link to="/noprofile">Nuestro menu</Link> </>)}
+              {isAuthenticated?(<> <Link to="/menu">Menu</Link> </>):(<> <Link to="/noprofile">Menu</Link> </>)}
                <Link to="/contacto">Contacto</Link>
                
                {/* (user&&user.name==="Admin")|| */(user&&user.email==="admin2125@gmail.com") ?(<><Link to="/administracion">Administracion</Link> <Link to="/AgregarProducto">Agregar producto</Link></>):(<></>)} 

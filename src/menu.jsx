@@ -56,7 +56,9 @@ const Agregar = (product) => {
   <div className="Super-box">
     {productos.map((producto) => (
       <div key={producto._id} className="box-product">
+       <div className='box-product-image'>
         <img src={producto.urlImage} height="180" width="180" alt="" />
+       </div>
         <div className="box-description">
           <h4>{producto.Nameproduct}</h4>
           <div className="box-description2">
@@ -65,7 +67,7 @@ const Agregar = (product) => {
           <div className="box-price-button">
             <p className="price">${producto.price}</p>
             <button onClick={() => Agregar(producto)} className="button-29">
-              Agregar
+              +
             </button>
           </div>
         </div>
@@ -113,10 +115,13 @@ function Menu() {
         <div className="box-menu">
          <div className="box-menu-2">
 
-        
+        <div>
+
+        </div>
          <div className="box-menu-tittle">
             <h4>Menu</h4>    
-         
+            
+
          </div> 
           <Carrito  allProducts={allProducts}
               setAllProducts={setAllProducts}
@@ -124,16 +129,12 @@ function Menu() {
               setCountProducts={setCountProducts}
               total={total}
               setTotal={setTotal}/>
-          <div>
+          <div className='Bordercito'>
       
        
                     </div>
          <div>
-            <div className="box-menu-subtittle">
- <Link  to="/menu">Cafe</Link>
- <Link  to="/menu-comida">Comida</Link>
- 
-            </div>
+           
          
            <ProductList
            productos={productos}

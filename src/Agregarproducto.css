@@ -8,10 +8,11 @@
     display: flex;
    justify-content: center;
    align-items: center;
+   background: #000000;
 }
 .Form-Agregarproducto{
     width: 550px;
- background: #000000c9;
+ background: #000000;
  padding: 20px;
  border: 2px solid #ffffff;
  border-radius: 10px;
@@ -32,6 +33,7 @@
 }
 .Form-Agregarproducto input::placeholder{
     text-align: center;
+    color: #00ffff;
 }
 
 .Form-Agregarproducto input:focus{

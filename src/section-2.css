@@ -2,174 +2,98 @@
 @import url('https://fonts.googleapis.com/css2?family=Lunasima:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Figtree&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@500&display=swap');
-.section__2-box{
-    display: flex;
-   justify-content: center;
- margin-top: 50px;
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&display=swap');
 
- 
+.Superbox-section-2{
+
 }
-.section__2-box img{
-  background-position: center;
-  background-size: contain;
-  width: 600px;
+
+
+
+.section__2-box-1{
+  display: flex;
+ justify-content: center;
+  background: #fdfaf0;
+  height: 100vh;
+  border-bottom: 1px solid #000000;
+
+
+}
+.section__2-box-titulo-1{
+  
+  font-size: 9vh;
+  text-align: center;
+
+  color: #000000;
+  font-family: 'Lunasima', sans-serif;
+  width: 100vh;
   height: 300px;
+
+}
+.section__2-box-titulo-1 h4{
+  font-family: 'Figtree', sans-serif;
+ padding: 20px 0 0 0;
+ border-bottom: 1px solid #000000;
+ width: 100%;
+}
+
+.section__2-box-parrafo-1{
+  padding: 5px;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Figtree', sans-serif;
+   
+}
+.section__2-box{
+   background: #e3dcc1;
+   display: flex;
+   justify-content: center;
+padding: 0 0 10vh 0;
+
 }
 .section__2-box-titulo{
  
-    font-size: 25px;
+    font-size: 8vh;
     text-align: center;
-    background: #000000d0;
-    color: #ffffff;
+ 
+    color: #000000;
     font-family: 'Lunasima', sans-serif;
-    width: 600px;
-    height: 300px;
-  border-bottom: 1px  solid white;
-  border-top: 1px  solid white;
+    width: 150vh;
+    height: 500px;
  
 }
 .section__2-box-titulo h4{
   font-family: 'Figtree', sans-serif;
  padding: 20px 0 0 0;
- border-bottom: 1px solid #ffffff;
+ border-bottom: 1px solid #000000;
 }
 .section__2-box-parrafo{
   padding: 5px;
-    font-size: 20px;
+    font-size: 2.5vh;
     text-align: center;
     margin-top: 20px;
     font-family: 'Figtree', sans-serif;
   
 }
-@media screen and (max-width:1200px) {
-  .section__2-box{
-    display: flex;
-   justify-content: center;
- 
-
- 
-}
-.section__2-box img{
-  width: 500px;
-  height: 400px;
-}
-.section__2-box-titulo{
- 
-    font-size: 25px;
-    text-align: center;
-    background: #000000d0;
-    color: #ffffff;
-    font-family: 'Lunasima', sans-serif;
-    width: 500px;
-    height: 400px;
-  border-bottom: 1px  solid white;
-  border-top: 1px  solid white;
- 
-}
-.section__2-box-titulo h4{
-  font-family: 'Figtree', sans-serif;
- padding: 20px 0 0 0;
- border-bottom: 1px solid #ffffff;
-}
 .section__2-box-parrafo{
-  padding: 5px;
-    font-size: 20px;
-    text-align: center;
-    margin-top: 20px;
-    font-family: 'Figtree', sans-serif; 
-   
-    overflow-y: scroll; 
-   
-    max-height: 390px;
-   
-  
+  text-align: center;
 }
-}
-@media screen and (max-width:920px) {
-  .section__2-box{
-    display: flex;
-   justify-content: center;
- 
+.section__2-box-product{
 
- 
+ margin-top: 5vh;
+ display: flex;
+justify-content: space-around;
 }
-.section__2-box img{
-  width: 350px;
-  height: 350px;
-}
-.section__2-box-titulo{
- 
-    font-size: 20px;
-    text-align: center;
-    background: #000000d0;
-    color: #ffffff;
-    font-family: 'Lunasima', sans-serif;
-    width: 350px;
-    height: 350px;
-  border-bottom: 1px  solid white;
-  border-top: 1px  solid white;
- 
-}
-.section__2-box-titulo h4{
-  font-family: 'Figtree', sans-serif;
- padding: 20px 0 0 0;
- border-bottom: 1px solid #ffffff;
-}
-.section__2-box-parrafo{
-  padding: 5px;
-    font-size: 18px;
-    text-align: center;
-    margin-top: 20px;
-    font-family: 'Figtree', sans-serif; 
-   
-    overflow-y: scroll; 
-   
-    max-height: 250px;
-   
-  
-}
-}
-@media screen and (max-width:576px) {
-  .section__2-box{
-    display: flex;
-   justify-content: center;
- 
 
- 
+.section__2-box-product img{
+  width: 160px;
+  height: 160px;
+ background: #0d0d0d;
+ border-radius: 50%;
+border: 3px solid #ffffff;
 }
-.section__2-box img{
-  width: 250px;
-  height: 250px;
-}
-.section__2-box-titulo{
- 
-    font-size: 20px;
-    text-align: center;
-    background: #000000d0;
-    color: #ffffff;
-    font-family: 'Lunasima', sans-serif;
-    width: 250px;
-    height: 250px;
-  border-bottom: 1px  solid white;
-  border-top: 1px  solid white;
- 
-}
-.section__2-box-titulo h4{
-  font-family: 'Figtree', sans-serif;
- padding: 20px 0 0 0;
- border-bottom: 1px solid #ffffff;
-}
-.section__2-box-parrafo{
-  padding: 5px;
-    font-size: 16px;
-    text-align: center;
-    margin-top: 20px;
-    font-family: 'Figtree', sans-serif; 
-   
-    overflow-y: scroll; 
-   
-    max-height: 150px;
-   
-  
-}
+.box-product-sub{
+font-size: 30px;
+font-family: 'Libre Franklin', sans-serif;
 }
