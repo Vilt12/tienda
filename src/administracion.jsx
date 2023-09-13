@@ -82,7 +82,8 @@ return(
 
 <table className="table_info">
   <thead>
-    <tr>
+    <tr>  
+      <th>Categoria</th>
       <th>Imagen del producto</th>
       <th>Nombre del producto</th>
       <th>Precio</th>
@@ -93,10 +94,12 @@ return(
   <tbody>
     {productos.map((producto) => (
       <tr key={producto._id}>
+        <td>{producto.categories}</td>
         <td><img src={producto.urlImage} alt="" width={"80px"} height={"80px"} /></td>
         <td>{producto.Nameproduct}</td>
         <td>${producto.price}</td>
-        <td>{producto.description}</td>
+       
+        <td>{producto.description}</td> 
         <td className="box-button-action">
           <button className="box-button-action-delete" onClick={() => eliminarProducto(producto._id)}>Eliminar</button>
           <button className="box-button-action-edit"  onClick={() => setProductoEditando(producto)}>Editar</button>
@@ -121,23 +124,37 @@ return(
         value={productoEditando.urlImage}
         onChange={(e) => handleInputChange("urlImage", e.target.value)}
       />
+    
       <label>Nombre del Producto:</label>
       <input
         type="text"
         value={productoEditando.Nameproduct}
         onChange={(e) => handleInputChange("Nameproduct", e.target.value)}
       />
+     
       <label>Precio:</label>
       <input
         type="number"
         value={productoEditando.price}
         onChange={(e) => handleInputChange("price", e.target.value)}
       />
+       
+       <label>Categoria:</label>
+       
+       <select type="text" value={productoEditando.categories} onChange={(e) =>{handleInputChange( "categories",e.target.value)}} >
+    <option value="Cafe">Cafe</option>
+    <option value="Comida">Comida</option>
+    <option value="Bebida">Bebidas</option>
+    <option value="Postre">Postres</option>
+    <option value="Promocion">Promocion</option>
+</select>
+    
       <label>Descripción:</label>
       <textarea
         value={productoEditando.description}
         onChange={(e) => handleInputChange("description", e.target.value)}
       ></textarea>
+     
       <div className="box-edit-button">
            <button type="submit">Guardar Cambios</button>
       <button onClick={cancelarEdicion}>Cancelar</button>

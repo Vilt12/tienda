@@ -7,7 +7,7 @@ import "./carrito.css"
 import Carrito from './carrito';
 import { useEffect } from 'react';
 
-
+import Foother from './foother';
  export function ProductList({ allProducts,
   setAllProducts,
   countProducts,
@@ -46,15 +46,37 @@ const Agregar = (product) => {
     setAllProducts([...allProducts, newProduct]);
   }
 };
+const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
 
+const cambiarCategoria = (categories) => {
+  setCategoriaSeleccionada(categories);
+  console.log(categories);
+};
+
+// Filtra los productos por categoría seleccionada
+const productosFiltrados = categoriaSeleccionada
+  ? productos.filter((producto) => producto.categories === categoriaSeleccionada)
+  : productos;
 
   console.log(allProducts);
  
- 
  return(
-  <>
+  <> 
+  <div className='box-categories'>
+  
+     <button onClick={() => cambiarCategoria('Cafe')}>Cafe</button>
+        <button onClick={() => cambiarCategoria('Comida')}>Comida</button>
+             <button onClick={() => cambiarCategoria('')}>Todos</button>
+        <button onClick={() => cambiarCategoria('Bebida')}>Bebidas</button>
+        <button onClick={() => cambiarCategoria('Postre')}>Postres</button>
+        <button onClick={() => cambiarCategoria('Promocion')}>Promociones</button>
+   
+  </div>
+   
+        
   <div className="Super-box">
-    {productos.map((producto) => (
+   
+    {productosFiltrados.map((producto)  => (
       <div key={producto._id} className="box-product">
        <div className='box-product-image'>
         <img src={producto.urlImage} height="180" width="180" alt="" />
@@ -109,7 +131,7 @@ function Menu() {
 
     return(
       
-        <div>   
+        <div >   
             <Navbar></Navbar>
            
         <div className="box-menu">
@@ -120,7 +142,7 @@ function Menu() {
         </div>
          <div className="box-menu-tittle">
             <h4>Menu</h4>    
-            
+           
 
          </div> 
           <Carrito  allProducts={allProducts}
@@ -148,9 +170,10 @@ function Menu() {
                    
                    
          </div>
-       
+   
          </div>
-        </div>
+        </div>   
+         <Foother></Foother>
         </div>
     )
 }

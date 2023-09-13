@@ -12,7 +12,6 @@ function Main() {
             <Navbar></Navbar>  
             <Section></Section>
             <Section2></Section2>
-            
             <Foother></Foother>
           
         </div>

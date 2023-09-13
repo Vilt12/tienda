@@ -4,7 +4,32 @@
 .carrito{
 color: #fff
 }
+.box-categories{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5vh;
 
+
+}
+.box-categories button{
+  font-size: 3vh;
+  background: none;
+  font-family: 'Open Sans', sans-serif;
+  border: none;
+  border-bottom: 2px solid  #000000;
+  cursor: pointer;
+  transition: .2s;
+  padding: 10px;
+  color: #000000;
+}
+.box-categories button:hover{
+
+ 
+  color: #580000;
+  transition: .2s;
+  border-radius: 30px;
+  border: 1px solid #000000;
+}
 .Super-box{
   display: flex;
   flex-wrap: wrap;
@@ -33,7 +58,7 @@ margin-top: 12.5vh;
 }
 .Bordercito{
   border-bottom: 2px solid #000000;
- 
+
 }
 .box-product{
   border-radius: 5px;

@@ -12,11 +12,11 @@ const [price,setprice]=useState("")
 const [description,setdescription]=useState("")
 const [quantity,setquantity]=useState(1)
 const [urlImage,seturlImage]=useState("")
-
+const [categories,setCategories]=useState("")
 
 function AgregarP() {
   
-    if ((Nameproduct.length || description.length || price.length || urlImage.length) === 0||"") {
+    if ((Nameproduct.length || description.length || price.length || urlImage.length ||categories) === 0||"") {
         alert("Por favor, complete todos los campos");
       } else {
         const producto = {
@@ -25,6 +25,7 @@ function AgregarP() {
           description: description,
           quantity: quantity,
           urlImage: urlImage,
+          categories:categories,
         };
     
         console.log(producto);
@@ -33,6 +34,7 @@ function AgregarP() {
           .post("/api/productos/AgregarProducto", producto)
           .then((res) => {
             alert("Producto Agregado correctamente");
+           
           })
           .catch((err) => {
             console.log(err);
@@ -57,6 +59,14 @@ function AgregarP() {
         <input placeholder="Precio del producto"  type="number" value={price} onChange={(e)=>{setprice(e.target.value)}} />
       
         <input placeholder="Descripcion del producto"  type="text" value={description} onChange={(e)=>{setdescription(e.target.value)}} />
+
+        <select placeholder="" type="text" value={categories} onChange={(e) =>{setCategories(e.target.value)}} >
+    <option value="Cafe">Cafe</option>
+    <option value="Comida">Comida</option>
+    <option value="Bebida">Bebidas</option>
+    <option value="Postre">Postres</option>
+    <option value="Promocion">Promocion</option>
+</select>
        <div className="box-agregar-button">
 <button onClick={AgregarP}>Agregar Producto</button>
        </div>

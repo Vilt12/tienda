@@ -10,7 +10,9 @@ const eschemaProducto=new eschema({
     price:Number,
     description:String,
     quantity:Number,
-    urlImage:String
+    urlImage:String,
+    categories:String    
+
 })
 
 const ModeloProducto=mongoose.model("Producto",eschemaProducto)
@@ -19,8 +21,8 @@ const ModeloProducto=mongoose.model("Producto",eschemaProducto)
 
 router.post("/agregarProducto", async (req, res) => {
     try {
-      // Obtén los datos del producto desde el cuerpo de la solicitud (req.body)
-      const { Nameproduct, price, description,quantity,urlImage } = req.body;
+      // Obténer los datos del producto desde el cuerpo de la solicitud (req.body)
+      const { Nameproduct, price, description,quantity,urlImage,categories } = req.body;
   
       // Crea un nuevo documento utilizando el modelo
       const nuevoProducto = new ModeloProducto({
@@ -28,7 +30,8 @@ router.post("/agregarProducto", async (req, res) => {
         price,
         description,
         quantity,
-        urlImage
+        urlImage,
+        categories
       });
   
       // Guarda el nuevo producto en la base de datos
@@ -67,7 +70,7 @@ router.delete("/productos/:id", async (req, res) => {
 //Actualizar productos
   router.put("/productos/:id", async (req, res) => {
     const productId = req.params.id;
-    const { Nameproduct, price, description, quantity, urlImage } = req.body;
+    const { Nameproduct, price, description, quantity, urlImage, categories } = req.body;
   
     try {
       // Busca el producto por su ID y actualiza los campos con los nuevos valores
@@ -79,6 +82,7 @@ router.delete("/productos/:id", async (req, res) => {
           description,
           quantity,
           urlImage,
+          categories
         },
         { new: true } // Esto devuelve el producto actualizado en lugar del producto antiguo
       );
