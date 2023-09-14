@@ -66,8 +66,8 @@ const productosFiltrados = categoriaSeleccionada
   
      <button onClick={() => cambiarCategoria('Cafe')}>Cafe</button>
         <button onClick={() => cambiarCategoria('Comida')}>Comida</button>
-             <button onClick={() => cambiarCategoria('')}>Todos</button>
-        <button onClick={() => cambiarCategoria('Bebida')}>Bebidas</button>
+       <button onClick={() => cambiarCategoria('Bebida')}>Bebidas</button>
+              <button onClick={() => cambiarCategoria('')}>Todos</button>
         <button onClick={() => cambiarCategoria('Postre')}>Postres</button>
         <button onClick={() => cambiarCategoria('Promocion')}>Promociones</button>
    

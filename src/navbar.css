@@ -8,28 +8,25 @@
    position: fixed; 
    display:flex;
     padding: 15px;
-    font-size: 20px;
     background: #000000d9;
     width: 100%;
     border-bottom: 1px solid #ffffff;
     box-shadow: 0 2px 5px #000000;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     font-family: 'Arimo', sans-serif;
     animation-name: navb;
     animation-duration: 0.5s;
- 
     z-index: 900;
 }
 .Barra__navegacion-1{
     display: flex;
-    justify-content: center;
 align-items: center;
 
 }
 .Barra__navegacion-1 a{
-font-size: 28px;
-    margin-left: 35px;
+font-size: 22px;
+    margin-left: 2vh;
 text-decoration: none;
 color: #ffffff;
 text-shadow: #000000 2px 1px 0px;
@@ -38,12 +35,12 @@ transition: 0.2s;
 }
 .Barra__navegacion-1 a:hover{
 text-shadow: 0 0 2px #ffffff;
-font-size: 29px;
+font-size: 25px;
 transition: 0.2s;
 }
 
 .Barra__navegacion-box{
-    margin-right: 50vh;
+  
 }
 .Barra__navegacion-usuario a{
 text-decoration: none;
@@ -54,6 +51,7 @@ transition: 0.2s;
 .Barra__navegacion-usuario{
     display: flex;
     align-items: center;
+    justify-content: end;
 
 }
 
@@ -70,17 +68,27 @@ transition: 0.2s;
   transform: translateY(0px);
     }
 }
+.box-iniciar{
+    margin-left: 2vh;
+  
+}
 .Profile-box{
     text-align: center;
     color: #ffffff;
-
+  
 }
 .Profile-box img{
     border-radius: 30px;
+    width: 30px;
+height: 30px;
+
+}
+.Profile-box img, h2{
+    margin-left: 20vh;
 }
 .boton-salir{
     border: none;
-    font-size: 24px;
+    font-size: 20px;
     background: none;
     color: #ffffff;
     cursor: pointer;
@@ -93,11 +101,11 @@ transition: 0.2s;
     font-size: 22px;
 }
 .box-boton-salir{
-    margin-right: 10vh;
+    margin-left: 2vh;
 }
 .boton-iniciar{
     border: none;
-    font-size: 25px;
+    font-size: 22px;
     background: none;
     color: #ffffff;
     cursor: pointer;
@@ -108,4 +116,117 @@ transition: 0.2s;
     transition: 0.2s;
     font-size: 27px;
 }
+@media (max-width:920px){
+    .Barra__navegacion-1 a{
+        font-size: 25px;
+            margin-left: 2vh;
+     
+        
+        }
+        .Profile-box img, h2{
+            margin-left: 10vh;
+        }
+        .Barra__navegacion-usuario a{
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        margin-right: 5vh;
+        transition: 0.2s;
+        }
+        .Barra__navegacion-usuario{
+            display: flex;
+            align-items: center;
+            justify-content: end;
+        
+        }
+    
+        .Profile-box{
+            text-align: center;
+            color: #ffffff;
+        
+        }
+        .Profile-box img{
+            border-radius: 30px;
+        }
+        .boton-salir{
+            border: none;
+            font-size: 25px;
+            background: none;
+            color: #ffffff;
+            cursor: pointer;
+            text-shadow: 0 0 2px #ffffff;
+          
+        }
+     
+        .box-boton-salir{
+            margin-left: 5vh;
+        }
+        .boton-iniciar{
+            border: none;
+            font-size: 25px;
+            background: none;
+            color: #ffffff;
+            cursor: pointer;
+           text-shadow: 1px 2px 0px #000000;
+        }
+       
+}
 
+@media (max-width:576px){
+    .Barra__navegacion-1 a{
+        font-size: 15px;
+            margin-left: 2vh;
+     
+        
+        }
+  
+        .Barra__navegacion-usuario a{
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        margin-right: 5vh;
+        transition: 0.2s;
+        }
+        .Barra__navegacion-usuario{
+            display: flex;
+            align-items: center;
+            justify-content: end;
+        
+        }
+    
+        .Profile-box{
+            text-align: center;
+            color: #ffffff;
+        
+        }
+        .Profile-box img{
+
+        }
+        .Profile-box img, h2{
+            margin-left: 1vh;
+        }
+        .Profile-box h2{
+            font-size: 15px;
+        }
+        .Profile-box img{
+            border-radius: 30px;
+            width: 30px;
+            height: 30px;
+        }
+        .boton-salir{
+            font-size: 15px;
+         
+          
+        }
+     
+        .box-boton-salir{
+            margin-left: 3vh;
+        }
+        .boton-iniciar{
+            border: none;
+            font-size: 15px;
+            background: none;
+            color: #ffffff;
+            cursor: pointer;
+           text-shadow: 1px 2px 0px #000000;
+        }
+       
+}

@@ -49,8 +49,9 @@ function Section2() {
             </div>
             <img src="https://everydaynature.com.ar/wp-content/uploads/pngegg-3.png" alt="" />
            </div>
-              
-              
+                </div>
+
+             <div className='section__2-box-product'>
            <div>
             <div className='box-product-sub'>
                 <p>Sanguches</p>
@@ -72,12 +73,12 @@ function Section2() {
             <img src="https://www.havanna.com.ar/data/upload/producto_galeria/340df6d3ef5e5d5e416c9d5df2e3b5d4.png" alt="" />
            </div>
             
-        
+        </div> 
               
            
              
              
-         </div>
+       
      
         </div>
        

@@ -9,7 +9,7 @@ export const Profile=()=>{
     return(
         isAuthenticated&&(
             <div className="Profile-box">
-                <img height={"50px"} width={"50px"} src={user.picture} alt={user.name} />
+                <img src={user.picture} alt={user.name} />
                 <h2>{user.name}</h2>
                 
             </div>

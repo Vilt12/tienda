@@ -18,12 +18,12 @@ function Section() {
                <div className='section__box-2'>
                 <p>Encuentra una gran variedad de productos a elegir para que tu paladar disfrute de un momento unico </p>
                </div>
- 
+  
+             
                 </div>
-                 <div className='section__box-img'>
+                <div className='section__box-img'>
                     <img src="https://iparvendinggroup.com/wp-content/uploads/2022/05/maquinas-de-cafe.png" alt="" />
                     </div>
-             
 
               
                

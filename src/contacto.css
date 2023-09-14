@@ -80,3 +80,88 @@ border-bottom: 1px solid #000000;
     animation: ani 1s infinite alternate;
    cursor:pointer
 }
+@media (max-width:920px){
+    @keyframes ani {
+        0%{
+            width: 80px;
+            height: 80px; 
+        }
+        100%{
+            width: 90px;
+        height: 90px; 
+        }
+    }
+
+    .section__box-contacto{
+    
+        width: 100%;
+        height:90vh ;
+      
+        margin-top: 12.5vh;
+    
+        }
+        
+
+
+
+    .section__box-2-contacto p{
+        width: 50vh;
+     
+      
+        
+    }
+    .section__box-1-contacto{
+ 
+      font-size: 7vh;  
+   
+   }
+   .section__box-2-contacto{
+
+    font-size: 3vh;
+
+ 
+}
+}
+
+@media (max-width:576px){
+    @keyframes ani {
+        0%{
+            width: 70px;
+            height: 70px; 
+        }
+        100%{
+            width: 80px;
+        height: 80px; 
+        }
+    }
+
+    .section__box-contacto{
+    
+        width: 100%;
+        height:90vh ;
+      
+        margin-top: 12.5vh;
+    
+        }
+        
+
+
+
+    .section__box-2-contacto p{
+        width: 40vh;
+     
+      
+        
+    }
+    .section__box-1-contacto{
+ 
+      font-size: 7vh;  
+   
+   }
+   .section__box-2-contacto{
+
+    font-size: 2.5vh;
+
+ 
+}
+}
