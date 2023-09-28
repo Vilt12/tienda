@@ -7,17 +7,19 @@
 .Barra__navegacion{
    position: fixed; 
    display:flex;
-    padding: 15px;
-    background: #000000d9;
+justify-content: center;
+    align-items: center;
+    padding: 18px;
+    background: #fc904757;
     width: 100%;
     border-bottom: 1px solid #ffffff;
     box-shadow: 0 2px 5px #000000;
-    justify-content: space-around;
-    align-items: center;
     font-family: 'Arimo', sans-serif;
     animation-name: navb;
     animation-duration: 0.5s;
     z-index: 900;
+    overflow-y: hidden;
+
 }
 .Barra__navegacion-1{
     display: flex;
@@ -39,8 +41,9 @@ font-size: 25px;
 transition: 0.2s;
 }
 
-.Barra__navegacion-box{
-  
+.Barra__navegacion-usuario{
+    display: flex;
+    align-items: center;
 }
 .Barra__navegacion-usuario a{
 text-decoration: none;
@@ -48,12 +51,7 @@ color: rgb(255, 255, 255);
 margin-right: 5vh;
 transition: 0.2s;
 }
-.Barra__navegacion-usuario{
-    display: flex;
-    align-items: center;
-    justify-content: end;
 
-}
 
 .Barra__navegacion-usuario a:hover{
     text-shadow: 0 0 2px #ffffff;
@@ -102,6 +100,7 @@ height: 30px;
 }
 .box-boton-salir{
     margin-left: 2vh;
+   
 }
 .boton-iniciar{
     border: none;
@@ -135,7 +134,7 @@ height: 30px;
         .Barra__navegacion-usuario{
             display: flex;
             align-items: center;
-            justify-content: end;
+            justify-content:  flex-end;
         
         }
     
@@ -171,14 +170,23 @@ height: 30px;
        
 }
 
-@media (max-width:576px){
+@media (max-width:540px){
+   .Barra__navegacion{
+    display:flex;
+    justify-content: flex-start;
+        align-items: center;
+        width: 95%;
+   }
     .Barra__navegacion-1 a{
         font-size: 15px;
             margin-left: 2vh;
      
         
         }
-  
+  .Barra__navegacion-1 img{
+    width: 50px;
+    height: 50px;
+  }
         .Barra__navegacion-usuario a{
         text-decoration: none;
         color: rgb(255, 255, 255);
@@ -188,8 +196,8 @@ height: 30px;
         .Barra__navegacion-usuario{
             display: flex;
             align-items: center;
-            justify-content: end;
-        
+            justify-content: flex-end;
+ 
         }
     
         .Profile-box{
@@ -212,7 +220,7 @@ height: 30px;
             height: 30px;
         }
         .boton-salir{
-            font-size: 15px;
+            font-size: 12px;
          
           
         }

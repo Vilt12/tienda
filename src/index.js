@@ -14,7 +14,10 @@ root.render(
   <Auth0Provider 
   domain="dev-im0nfmwmqitvcfwy.us.auth0.com"
   clientId='aP5KEGBSqEihso3rFr7VQW8rkTZUf8Qw'
-  redirectUri={window.location.origin}
+  authorizationParams={{
+    redirect_uri: window.location.origin,
+    // ...
+  }}
   >
     <App />
     </Auth0Provider>

@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
 import "./carrito.css";
+
+//Iconos de FONTAWESOMEICON
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+//
+
 import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 import axios from "axios";
 
@@ -14,11 +18,18 @@ function Carrito({
   setCountProducts,
   setTotal,
 }) {
-  const [preferenceId, setPreferenceId] = useState(null);
-  initMercadoPago("APP_USR-9936f755-8524-42bb-9962-b65d7551d4e1");
-  const [animateIcon, setAnimateIcon] = useState(false);
-  const [navbarOpen, setNavbarOpen] = useState(false);
 
+  const [preferenceId, setPreferenceId] = useState(null);
+  const [animateIcon, setAnimateIcon] = useState(false);
+  const [navbarOpen, setNavbarOpen] = useState(false); 
+
+ initMercadoPago("APP_USR-9936f755-8524-42bb-9962-b65d7551d4e1");
+
+
+  const toggleNavbar = () => {
+    setNavbarOpen(!navbarOpen);
+  };
+  
   useEffect(() => {
     if (allProducts.length > 0) {
       setNavbarOpen(true);
@@ -28,11 +39,6 @@ function Carrito({
       setAnimateIcon(false);
     }
   }, [allProducts]);
-
-  const toggleNavbar = () => {
-    setNavbarOpen(!navbarOpen);
-  };
-
   /* _______________________________________________________________Eliminar Productos________________________________________________________________________________________________________________ */
   const onDeleteProduct = (product) => {
     const results = allProducts.filter(
@@ -43,13 +49,6 @@ function Carrito({
     setCountProducts(countProducts - product.quantity);
     setAllProducts(results);
     /* _______________________________________________________________Eliminar Productos________________________________________________________________________________________________________________ */
-  };
-
-  const handleBuy = async () => {
-    const id = await createPreference(allProducts);
-    if (id) {
-      setPreferenceId(id);
-    }
   };
 
   const createPreference = async (products) => {
@@ -73,7 +72,15 @@ function Carrito({
     } catch (error) {
       console.log(error);
     }
+  }; 
+  
+  const handleBuy = async () => {
+    const id = await createPreference(allProducts);
+    if (id) {
+      setPreferenceId(id);
+    }
   };
+
 
   /* _______________________________________________________________________________________________________________________________________________________________________________________________    */
   return (
@@ -93,35 +100,51 @@ function Carrito({
       </div>
 
       <nav className={`navbar ${navbarOpen ? "open" : ""}`}>
-        <div className="box-total-product">
+         <div className="box-total-product">
           <p>Productos totales: {countProducts}</p>
         </div>
 
         <div className="Box-total">
           <p>
-            Total: <span>${total}</span>
-          </p>
-        </div>
+            Total:
+          </p> 
+          <span>${total}</span>
+        </div>  
         {allProducts.length ? (
           <div className="box-carrito">
-            <button className="button-pay" onClick={handleBuy}>Pagar</button>
-            {preferenceId && <Wallet initialization={{ preferenceId }} />}
+         
             {allProducts.map((product) => (
             
             <ul key={product.idProducto} className="carrito">
-                <li>
+              <div className="box-carrito-imagen">
+                  <li>
                   <img src={product.urlImage} height="80" width="80" alt="" />
                 </li>
-                <li>{product.Nameproduct}</li>
-                <li>${product.price}</li>
-                <li>{product.quantity}</li>
+              </div>
+                   <div className="box-quantity">
+             <li>{product.quantity}</li>   
+          </div>
+                <div className="box-carrito-descripcion">
+     
+           
+             <li>{product.Nameproduct}</li>
+             </div>
+               <div className="box-price">
+<li>${product.quantity*product.price}</li>
+                              
+               
+               </div>
+                
+             
 
-                <button
+                
+                 <button
                   className="button-delete"
                   onClick={() => onDeleteProduct(product)}
                 >
                   <FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon>
                 </button>
+
               </ul>
             ))}
           </div>
@@ -131,8 +154,18 @@ function Carrito({
           
          
         )}
-      </nav>
+        <div className="Box-info-product">
 
+       
+     
+         <button className="button-pay" onClick={handleBuy}>Pagar</button>
+         <div className="button-mercado">
+           {preferenceId && <Wallet className="enlace-mercado" initialization={{ preferenceId }} />} 
+         </div>
+           
+            </div>
+      </nav>
+  
       <div className={`content ${navbarOpen ? "open" : ""}`}></div>
     </div>
   );

@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 .Superbox-section-2{
 
 }
@@ -13,28 +13,27 @@
 .section__2-box-1{
   display: flex;
  justify-content: center;
-  background: #fdfaf0;
+  
  
-  border-bottom: 1px solid #000000;
-
+ 
 
 }
 .section__2-box-titulo-1{
-  
+ 
+
   font-size: 9vh;
   text-align: center;
 
-  color: #000000;
+  color: #dadcda;
   font-family: 'Lunasima', sans-serif;
-  width: 100vh;
-
+  width: 150vh;
 
 }
 .section__2-box-titulo-1 iframe{
   margin-top: 5vh;
 }
 .section__2-box-titulo-1 h4{
-  font-family: 'Figtree', sans-serif;
+  font-family: 'Oswald', sans-serif;
  padding: 20px 0 0 0;
  border-bottom: 1px solid #000000;
 
@@ -42,70 +41,74 @@
 
 .section__2-box-parrafo-1{
   padding: 5px;
-    font-size: 25px;
+  font-size: 3vh;
     text-align: center;
     margin-top: 20px;
-    font-family: 'Figtree', sans-serif;
-   
+    font-family: 'Oswald', sans-serif;
 }
 .section__2-box{
-   background: #fff7d8;
+ 
    display: flex;
    justify-content: center;
 padding: 0 0 10vh 0;
-
+background: #ffffff14;
+backdrop-filter: blur(20px); 
 }
 .section__2-box-titulo{
  
     font-size: 8vh;
     text-align: center;
- 
+
     color: #000000;
-    font-family: 'Lunasima', sans-serif;
+    font-family: 'Oswald', sans-serif;
     width: 150vh;
-   
+  
  
 }
 .section__2-box-titulo h4{
-  font-family: 'Figtree', sans-serif;
+  font-family: 'Oswald', sans-serif;
  padding: 20px 0 0 0;
  border-bottom: 1px solid #000000;
+ 
 }
 .section__2-box-parrafo{
   padding: 5px;
-    font-size: 2.5vh;
+    font-size: 3vh;
     text-align: center;
     margin-top: 20px;
-    font-family: 'Figtree', sans-serif;
-  
+    font-family: 'Oswald', sans-serif;
+ 
 }
 .section__2-box-parrafo{
   text-align: center;
+ 
 }
 .section__2-box-product{
 
  margin-top: 5vh;
  display: flex;
-justify-content: space-around;
+justify-content: space-evenly;
 }
 
 .section__2-box-product img{
   width: 160px;
   height: 160px;
- background: #0d0d0d;
- border-radius: 50%;
-border: 3px solid #ffffff;
+ background: #ffffff;
+
+border: 3px solid #000000;
 }
 .box-product-sub{
 font-size: 30px;
-font-family: 'Libre Franklin', sans-serif;
+font-family: 'Oswald', sans-serif;
+background: #000000;
+color: #ffffff;
 }
 @media (max-width: 1300px){
   .section__2-box-titulo-1{
     
     font-size: 8vh;
     width: 120vh;
-    color: #000000;
+  
   
   
   
@@ -128,7 +131,7 @@ font-family: 'Libre Franklin', sans-serif;
     font-size: 8vh;
     text-align: center;
  
-    color: #000000;
+ 
     font-family: 'Lunasima', sans-serif;
     width: 100vh;
    
@@ -145,9 +148,9 @@ font-family: 'Libre Franklin', sans-serif;
  .section__2-box-product img{
   width: 150px;
   height: 150px;
- background: #0d0d0d;
- border-radius: 50%;
-border: 3px solid #ffffff;
+ background: #ffffff;
+ 
+border: 3px solid #000000;
 }
  
 .box-product-sub{
@@ -160,7 +163,7 @@ border: 3px solid #ffffff;
   
     font-size: 6vh;
     width: 60vh;
-    color: #000000;
+  
   
   
   
@@ -182,7 +185,6 @@ border: 3px solid #ffffff;
     font-size: 5vh;
     text-align: center;
  
-    color: #000000;
     font-family: 'Lunasima', sans-serif;
     width: 60vh;
    
@@ -199,9 +201,9 @@ border: 3px solid #ffffff;
  .section__2-box-product img{
   width: 120px;
   height: 120px;
- background: #0d0d0d;
- border-radius: 50%;
-border: 3px solid #ffffff;
+ background: #ffffff;
+
+border: 3px solid #000000;
 }
  
 .box-product-sub{
@@ -215,7 +217,7 @@ border: 3px solid #ffffff;
     font-size: 6vh;
     width: 50vh;
   
-    color: #000000;
+    
   
   
   
@@ -237,14 +239,13 @@ border: 3px solid #ffffff;
     font-size: 5vh;
     text-align: center;
  
-    color: #000000;
     font-family: 'Lunasima', sans-serif;
     width: 55vh;
    
  
 }
 .section__2-box-parrafo{
-  
+  font-size: 2.5vh;
   text-align: justify;
 }
 .section__2-box-product{
@@ -254,9 +255,9 @@ border: 3px solid #ffffff;
  .section__2-box-product img{
   width: 80px;
   height: 80px;
- background: #0d0d0d;
- border-radius: 50%;
-border: 3px solid #ffffff;
+ background: #ffffff;
+
+border: 3px solid #000000;
 }
  
 .box-product-sub{

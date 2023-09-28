@@ -1,12 +1,18 @@
 import { useEffect, useState } from "react";
-import AgregarProducto from "./AgregarProducto";
+
 import "./administracion.css";
 import axios from "axios";
 import Navbar from "./nav-bar";
+import Foother from "./foother";
 function Administracion() {
-
+  
   const [productos, setProductos] = useState([]);
+const [productoEditando, setProductoEditando] = useState(false);
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
+  const [categories,setCategories]=useState("")
 
+
+  
   useEffect(() => {
     // Realiza una solicitud GET al servidor para obtener la lista de productos
     axios.get("/api/productos/productos")
@@ -32,7 +38,7 @@ function Administracion() {
       });
   };
 
-  const [productoEditando, setProductoEditando] = useState(false);
+  
   
 
   const handleInputChange = (field, value) => {
@@ -48,7 +54,10 @@ function Administracion() {
     axios.put(`/api/productos/productos/${productoEditando._id}`, productoEditando)
       .then((response) => {
         alert(response.data.mensaje);
-        
+        axios.get("/api/productos/productos")
+        .then((response) => {
+          setProductos(response.data); // Actualiza la lista de productos
+        })
         setProductoEditando(null); // Limpia el estado de productoEditando
       
       })
@@ -62,8 +71,18 @@ function Administracion() {
   };
 
 
-  const [editOper, setEditopen] = useState(false);
-
+ 
+  const cambiarCategoria = (categories) => {
+    setCategoriaSeleccionada(categories);
+    
+  };
+  
+  // Filtra los productos por categoría seleccionada
+  const productosFiltrados = categoriaSeleccionada
+    ? productos.filter((producto) => producto.categories === categoriaSeleccionada)
+    : productos;
+  
+   
   
 
 return(
@@ -71,17 +90,30 @@ return(
   <div className="Super-box-administracion" > 
   
     <Navbar></Navbar>
- 
+
   <div className="Formulario">
  
 
 
-<div >
+
       <div className="body-table">
 
 
 <table className="table_info">
+
+  
   <thead>
+    <tr>
+      <th><select type="text" value={categories} onChange={(e) =>{setCategoriaSeleccionada(e.target.value)}} >
+    <option value="">Mostrar por categoria</option>
+    <option value="Cafe">Cafe</option>
+    <option value="Comida">Comida</option>
+    <option value="">Todos</option>
+    <option value="Bebida">Bebidas</option>
+    <option value="Postre">Postres</option>
+    <option value="Promocion">Promocion</option>
+</select></th>
+    </tr>
     <tr>  
       <th>Categoria</th>
       <th>Imagen del producto</th>
@@ -92,7 +124,7 @@ return(
     </tr>
   </thead>
   <tbody>
-    {productos.map((producto) => (
+    {productosFiltrados.map((producto) => (
       <tr key={producto._id}>
         <td>{producto.categories}</td>
         <td><img src={producto.urlImage} alt="" width={"80px"} height={"80px"} /></td>
@@ -108,12 +140,13 @@ return(
     ))}
   </tbody>
 </table>
+
 </div>
       {productoEditando && (
         
   <div className={`box-edit ${handleInputChange ? "open" : ""}`}>
     <div classname="edit-title">
-        <h2>Editar Producto</h2>
+        <h4>Editar Producto</h4>
     </div>
   
     <form className="edit-form" onSubmit={guardarCambios}>
@@ -165,11 +198,11 @@ return(
   </div>
 )}
  
-    </div>
+  
 
 </div>
    
-    
+    <Foother></Foother>
     
     </div>
 )    

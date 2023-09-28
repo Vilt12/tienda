@@ -1,6 +1,6 @@
 import React from 'react';
 import "./section-2.css"
-import Navbar from "./nav-bar";
+
 
 function Section2() {
     return(
@@ -15,7 +15,7 @@ function Section2() {
             
             </div>
             <div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18917.968189562314!2d-69.236878497298!3d45.18359824813812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb0225bd44bd137%3A0xa3e3c077da62cd2b!2sDover-Foxcroft%2C%20Maine%2004426%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sar!4v1694474585320!5m2!1ses-419!2sar" width="600" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18917.968189562314!2d-69.236878497298!3d45.18359824813812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb0225bd44bd137%3A0xa3e3c077da62cd2b!2sDover-Foxcroft%2C%20Maine%2004426%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sar!4v1694474585320!5m2!1ses-419!2sar" width="600" height="450" title='Mapita'   loading="lazy" ></iframe>
             </div>
         </div>
         
@@ -31,7 +31,7 @@ function Section2() {
             <div className='section__2-box-product'>
            <div>
             <div className='box-product-sub'>
-                <p>Facturas</p>
+                <p>Panaderia</p>
             </div>
                   <img src="https://platosargentinos.com/wp-content/uploads/2022/09/Receta-de-medialunas-caseras-de-manteca-argentinas.png" alt="" />
            </div>
@@ -54,7 +54,7 @@ function Section2() {
              <div className='section__2-box-product'>
            <div>
             <div className='box-product-sub'>
-                <p>Sanguches</p>
+                <p>Sandwiches</p>
             </div>
             <img src="https://www.juliana-delivery.com.ar/uploads/products/detail_products_7576.png" alt="" />
            </div>

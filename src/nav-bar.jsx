@@ -1,7 +1,5 @@
 import React from 'react';
 import "./navbar.css";
-import "./login";
-import "./register";
 import "./menu"
 import { Link } from "react-router-dom";
 import { LoginButton } from './Login0';
@@ -16,6 +14,29 @@ function Navbar(){
 
     const{isAuthenticated,user,loginWithRedirect,email}=useAuth0();  
   
+
+
+/* const { getAccessTokenSilently } = useAuth0();
+
+  // Obtener el token de acceso
+  const obtenerTokenDeAcceso = async () => {
+    try {
+      const accessToken = await getAccessTokenSilently();
+      console.log('Token de acceso:', accessToken); */
+
+
+  /*     // Puedes utilizar accessToken según tus necesidades
+    } catch (error) {
+      console.error('Error al obtener el token de acceso:', error);
+    }
+  };
+  obtenerTokenDeAcceso(); */
+
+  // Verificar si el usuario tiene un rol específico
+  
+
+
+
        return(
         <nav className="Barra__navegacion">
        
@@ -26,9 +47,9 @@ function Navbar(){
                 <Link referrerPolicy="no-referrer" crossOrigin="anonymus" to="/"><img src="https://cdn-icons-png.flaticon.com/128/2935/2935500.png" alt="" width={"70px"} height={"70px"} /> </Link>
        
               {isAuthenticated?(<> <Link to="/menu">Menu</Link> </>):(<> <Link to="/noprofile">Menu</Link> </>)}
-               <Link to="/contacto">Contacto</Link>
+               <Link crossOrigin="anonymous" referrerPolicy="no-referrer" to="/contacto">Contacto</Link>
                
-               {/* (user&&user.name==="Admin")|| */(user&&user.email==="admin2125@gmail.com") ?(<><Link to="/administracion">Administracion</Link> <Link to="/AgregarProducto">Agregar producto</Link></>):(<></>)} 
+               {/* (user&&user.name==="Admin")|| */(user&&user.email==="admin2125@gmail.com") ?(<><Link crossOrigin="anonymous" referrerPolicy="no-referrer" to="/administracion">Administracion</Link> <Link crossOrigin="anonymous" referrerPolicy="no-referrer" to="/AgregarProducto">Agregar producto</Link></>):(<></>)} 
          
              <div className="Barra__navegacion-usuario">
     

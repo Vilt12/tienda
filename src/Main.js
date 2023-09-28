@@ -7,7 +7,7 @@ import Navbar from "./nav-bar";
 
 function Main() {
     return(
-        <div classname="body-main">
+        <div>
           
             <Navbar></Navbar>  
             <Section></Section>

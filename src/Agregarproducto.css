@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
 
 
 .box-agregarProducto{
@@ -8,27 +9,29 @@
     display: flex;
    justify-content: center;
    align-items: center;
-   background: #000000;
+  
 }
 .Form-Agregarproducto{
-    width: 550px;
- background: #000000;
+    width: 80vh;
+ background: #22283152;
  padding: 20px;
  border: 2px solid #ffffff;
  border-radius: 10px;
+ backdrop-filter: blur(20px);
 }
 .Form-Agregarproducto input{
     width: 95%;
     padding: 10px;
     margin-top: 2vh;
     font-size: 18px;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Play', sans-serif;
     border-radius: 10px;
     border: none;
     transition: .5s;
-    background: #000000;
-    color: #00ffff;
-    border:2px #ffffff solid
+    background: #EEEEEE;
+    color: #000000;
+    border:2px #ffffff solid;
+    font-family: 'Play', sans-serif;
   
 }
 .Form-Agregarproducto select{
@@ -40,14 +43,15 @@
     border-radius: 10px;
     border: none;
     transition: .5s;
-    background: #000000;
-    color: #00ffff;
-    border:2px #ffffff solid
+    background: #EEEEEE;
+    color: #000000;
+    border:2px #ffffff solid;
+    font-family: 'Play', sans-serif;
   
 }
 .Form-Agregarproducto input::placeholder{
     text-align: center;
-    color: #00ffff;
+    color: #000000;
 }
 
 .Form-Agregarproducto input:focus{
@@ -61,7 +65,7 @@
     font-size: 25px;
     color:#ffffff;
     margin-bottom: 3vh;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Play', sans-serif;
 }
 .box-agregar-button{
 display: flex;
@@ -72,10 +76,10 @@ margin-top: 3vh;
 .box-agregar-button button{
     padding: 10px;
     font-size: 20px;
-    background: #ffffff;
+    background: #E4F1FF;
     border:1px solid #ffffff;
     border-radius: 10px;
-    box-shadow: 3px 3px 0px #b0b0b0;
     color: #000000;
     cursor: pointer;
+    font-family: 'Play', sans-serif;
 }

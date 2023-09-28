@@ -16,22 +16,16 @@ import Foother from './foother';
   setTotal,
 productos,
 setProductos}) {
- /* _______________________________________________________________________________________________________________________________________________________________________________ */
 
- 
-
-/* ______________________________________________________________________ */
-
-
-/* ______________________________________________________________________ */
+// busca un producto en una lista llamada allProducts para verificar si ya existe en el carrito. 
 const Agregar = (product) => {
   const existingProductIndex = allProducts.findIndex(
-    (item) => item.Nameproduct === product.Nameproduct
+    (item) => item.Nameproduct === product.Nameproduct //busca un producto cuyo nombre sea igual al nombre del producto que se pasa como argumento.
   );
 
   if (existingProductIndex !== -1) {
     // El producto ya existe en el carrito, incrementa la cantidad
-    const updatedProducts = [...allProducts];
+    const updatedProducts = [...allProducts]; //Se crea una copia de la lista de todos los productos en el carrito utilizando el operador spread ([...allProducts]). Esto se hace para evitar modificar directamente el estado original sin crear una nueva instancia.
     updatedProducts[existingProductIndex].quantity += 1;
 
     setTotal(total + product.price);
@@ -50,26 +44,28 @@ const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
 
 const cambiarCategoria = (categories) => {
   setCategoriaSeleccionada(categories);
-  console.log(categories);
+
 };
 
-// Filtra los productos por categoría seleccionada
+// Arreglo que ocntiene los productos filtrados por categoria seleccionada. 
+//Basicamente utilizamos prodcutos.filter para mostrar solo los productos que coinciden con la categoria seleccionada
+//Y si no elegimos ninguna categoria o en este caso la categoria Todos que no tiene valor alguno, nos mostrara todos los productos 
 const productosFiltrados = categoriaSeleccionada
   ? productos.filter((producto) => producto.categories === categoriaSeleccionada)
   : productos;
 
-  console.log(allProducts);
+
  
  return(
   <> 
   <div className='box-categories'>
   
-     <button onClick={() => cambiarCategoria('Cafe')}>Cafe</button>
-        <button onClick={() => cambiarCategoria('Comida')}>Comida</button>
-       <button onClick={() => cambiarCategoria('Bebida')}>Bebidas</button>
-              <button onClick={() => cambiarCategoria('')}>Todos</button>
-        <button onClick={() => cambiarCategoria('Postre')}>Postres</button>
-        <button onClick={() => cambiarCategoria('Promocion')}>Promociones</button>
+      <button onClick={() => cambiarCategoria('Cafe')}>Cafe</button>
+      <button onClick={() => cambiarCategoria('Comida')}>Comida</button>
+      <button onClick={() => cambiarCategoria('Bebida')}>Bebidas</button>
+      <button onClick={() => cambiarCategoria('')}>Todos</button>
+      <button onClick={() => cambiarCategoria('Postre')}>Postres</button>
+      <button onClick={() => cambiarCategoria('Promocion')}>Promociones</button>
    
   </div>
    
@@ -106,11 +102,11 @@ const productosFiltrados = categoriaSeleccionada
 
 
 function Menu() {
-  const [allProducts, setAllProducts] = useState([]);
- const [total, setTotal] = useState(0);
- const [countProducts, setCountProducts] = useState(0);
-
- const [productos, setProductos] = useState([]);
+  
+const [allProducts, setAllProducts] = useState([]);
+const [total, setTotal] = useState(0);
+const [countProducts, setCountProducts] = useState(0);
+const [productos, setProductos] = useState([]);
 
 
 

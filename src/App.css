@@ -43,5 +43,6 @@
   margin-top: 20vh;
 }
 body{
- background: #000;
+ background:url("https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero.jpg") ;
+ background-size: cover;
 }
