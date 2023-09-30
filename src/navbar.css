@@ -176,7 +176,7 @@ height: 30px;
     justify-content: flex-start;
         align-items: center;
         width: 95%;
-        background: #fc8f47a9;
+        backdrop-filter: blur(20px);
    }
     .Barra__navegacion-1 a{
         font-size: 15px;
