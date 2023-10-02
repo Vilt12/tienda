@@ -1,0 +1,13 @@
+
+{
+    "rewrites": [
+      {
+        "source": "/(.*)",
+        "destination": "./serverNode.js"
+      },
+      {
+        "source": "/(.*)",
+        "destination":"./server.js"
+      }
+    ]
+  }
