@@ -22,7 +22,7 @@ function Carrito({
   const [preferenceId, setPreferenceId] = useState(null);
   const [animateIcon, setAnimateIcon] = useState(false);
   const [navbarOpen, setNavbarOpen] = useState(false); 
-
+  const [loading, setLoading] = useState(false);
  initMercadoPago("APP_USR-9936f755-8524-42bb-9962-b65d7551d4e1");
 
 
@@ -75,10 +75,13 @@ function Carrito({
   }; 
   
   const handleBuy = async () => {
+    setLoading(true);
     const id = await createPreference(allProducts);
     if (id) {
       setPreferenceId(id);
+    
     }
+    setLoading(false)
   };
 
 
@@ -156,13 +159,22 @@ function Carrito({
         )}
         <div className="Box-info-product">
 
-       
-     
-         <button className="button-pay" onClick={handleBuy}>Pagar</button>
-         <div className="button-mercado">
-           {preferenceId && <Wallet className="enlace-mercado" initialization={{ preferenceId }} />} 
-         </div>
-           
+        {loading ? (
+        <h4>Cargando...</h4>
+      ) : (
+        <p></p>
+      )}   
+      
+      {preferenceId ? (
+        <div className="button-mercado">
+               
+          <Wallet className="enlace-mercado" initialization={{ preferenceId }} />
+        </div>
+      ):(
+        <button className="button-pay" onClick={handleBuy}>Pagar</button>
+      )}
+    
+         
             </div>
       </nav>
   

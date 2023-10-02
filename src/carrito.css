@@ -159,11 +159,7 @@ border-bottom:1px solid #ffffff ;
   .button-delete{
     cursor: pointer;
   }
-  .enlace-mercado{
- 
-  
-  }
-  
+
 @media screen and (max-width:920px) {
   #toggleButton {
        font-size: 50px;
