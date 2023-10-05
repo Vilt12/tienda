@@ -15,7 +15,7 @@ const [productoEditando, setProductoEditando] = useState(false);
   
   useEffect(() => {
     // Realiza una solicitud GET al servidor para obtener la lista de productos
-    axios.get("/api/productos/productos")
+    axios.get("https://backend-one-liart.vercel.app/api/productos/productos")
       .then((response) => {
         setProductos(response.data); // Establece la lista de productos en el estado
       })
@@ -27,7 +27,7 @@ const [productoEditando, setProductoEditando] = useState(false);
  
   const eliminarProducto = (productId) => {
     // Realiza una solicitud DELETE al servidor para eliminar el producto
-    axios.delete(`/api/productos/productos/${productId}`)
+    axios.delete(`https://backend-one-liart.vercel.app/api/productos/productos/${productId}`)
       .then((response) => {
         alert(response.data.mensaje);
         // Actualiza la lista de productos después de eliminar uno
@@ -51,10 +51,10 @@ const [productoEditando, setProductoEditando] = useState(false);
   const guardarCambios = (e) => {
     e.preventDefault();
     // Realiza una solicitud PUT al servidor para actualizar el producto
-    axios.put(`/api/productos/productos/${productoEditando._id}`, productoEditando)
+    axios.put(`https://backend-one-liart.vercel.app/api/productos/productos/${productoEditando._id}`, productoEditando)
       .then((response) => {
         alert(response.data.mensaje);
-        axios.get("/api/productos/productos")
+        axios.get("https://backend-one-liart.vercel.app/api/productos/productos")
         .then((response) => {
           setProductos(response.data); // Actualiza la lista de productos
         })

@@ -114,7 +114,7 @@ const [productos, setProductos] = useState([]);
    // Realiza la solicitud para obtener los productos desde tu base de datos
    async function obtenerProductos() {
      try {
-       const response = await fetch('/api/productos/productos');
+       const response = await fetch('https://backend-one-liart.vercel.app/api/productos');
        const data = await response.json();
        setProductos(data);
      } catch (error) {

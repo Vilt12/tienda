@@ -19,7 +19,7 @@ justify-content: center;
     animation-duration: 0.5s;
     z-index: 900;
     overflow-y: hidden;
-
+     backdrop-filter: blur(10px);
 }
 .Barra__navegacion-1{
     display: flex;

@@ -159,21 +159,24 @@ function Carrito({
         )}
         <div className="Box-info-product">
 
-        {loading ? (
-        <h4>Cargando...</h4>
-      ) : (
-        <p></p>
-      )}   
       
-      {preferenceId ? (
+      {preferenceId?(
         <div className="button-mercado">
-               
+               <button className="button-pay" onClick={handleBuy}>Actualizar</button>
           <Wallet className="enlace-mercado" initialization={{ preferenceId }} />
         </div>
       ):(
         <button className="button-pay" onClick={handleBuy}>Pagar</button>
+        
       )}
-    
+
+      {loading ? (
+        <div className="event-loading"><h4>Cargando...</h4></div>
+        
+      ) : (
+        <p></p>
+      )}   
+      
          
             </div>
       </nav>

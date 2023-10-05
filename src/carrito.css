@@ -159,6 +159,10 @@ border-bottom:1px solid #ffffff ;
   .button-delete{
     cursor: pointer;
   }
+  .event-loading{
+    font-family: "Nunito Sans", sans-serif;
+    color: #ffffff;
+  }
 
 @media screen and (max-width:920px) {
   #toggleButton {
