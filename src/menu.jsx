@@ -6,8 +6,9 @@ import { useState } from 'react';
 import "./carrito.css"
 import Carrito from './carrito';
 import { useEffect } from 'react';
-
+import { useAuth0 } from '@auth0/auth0-react';
 import Foother from './foother';
+
  export function ProductList({ allProducts,
   setAllProducts,
   countProducts,
@@ -107,6 +108,19 @@ const [allProducts, setAllProducts] = useState([]);
 const [total, setTotal] = useState(0);
 const [countProducts, setCountProducts] = useState(0);
 const [productos, setProductos] = useState([]);
+
+   
+const{isAuthenticated,user,email}=useAuth0();  
+  
+useEffect(() => {
+ if (isAuthenticated) {
+  
+ } else {
+    window.location.replace("/")
+ }
+}, []);
+
+
 
 
 

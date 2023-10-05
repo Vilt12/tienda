@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./navbar.css";
 import "./menu"
 import { Link } from "react-router-dom";
@@ -49,7 +49,7 @@ function Navbar(){
               {isAuthenticated?(<> <Link to="/menu">Menu</Link> </>):(<> <Link to="/noprofile">Menu</Link> </>)}
                <Link crossOrigin="anonymous" referrerPolicy="no-referrer" to="/contacto">Contacto</Link>
                
-               {/* (user&&user.name==="Admin")|| */(user&&user.email==="admin2125@gmail.com") ?(<><Link crossOrigin="anonymous" referrerPolicy="no-referrer" to="/administracion">Administracion</Link> <Link crossOrigin="anonymous" referrerPolicy="no-referrer" to="/AgregarProducto">Agregar producto</Link></>):(<></>)} 
+               {(user&&user.email==="admin2125@gmail.com") ?(<><Link crossOrigin="anonymous" referrerPolicy="no-referrer" to="/administracion">Administracion</Link> <Link crossOrigin="anonymous" referrerPolicy="no-referrer" to="/AgregarProducto">Agregar producto</Link></>):(<></>)} 
          
              <div className="Barra__navegacion-usuario">
     

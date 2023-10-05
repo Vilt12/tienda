@@ -1,11 +1,27 @@
 import { useEffect, useState } from "react";
-
 import "./administracion.css";
 import axios from "axios";
 import Navbar from "./nav-bar";
 import Foother from "./foother";
+import { useAuth0 } from "@auth0/auth0-react";
 function Administracion() {
   
+
+   
+  const{isAuthenticated,user,email}=useAuth0();  
+  
+  useEffect(() => {
+   if (user&&user.email==="admin2125@gmail.com") {
+    
+   } else {
+      window.location.replace("/")
+   }
+ }, []);
+  
+
+
+
+
   const [productos, setProductos] = useState([]);
 const [productoEditando, setProductoEditando] = useState(false);
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);

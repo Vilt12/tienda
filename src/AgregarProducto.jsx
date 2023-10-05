@@ -3,9 +3,23 @@ import { useState } from "react";
 import axios from "axios";
 import Navbar from "./nav-bar";
 import "./Agregarproducto.css"
-
+import { useAuth0 } from "@auth0/auth0-react";
+import { useEffect } from "react";
 function AgregarProducto() {
-    // Generar un identificador único
+   
+  const{isAuthenticated,user,email}=useAuth0();  
+  
+  useEffect(() => {
+   if (user&&user.email==="admin2125@gmail.com") {
+    
+   } else {
+      window.location.replace("/")
+   }
+ }, []);
+  
+  
+  
+  // Generar un identificador único
 
     //Estados locales, se inicializan vacios y quantity con un valor predeterminado en 1 uwu
 const [Nameproduct,setNameproduct]=useState("")
