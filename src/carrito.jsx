@@ -58,7 +58,7 @@ function Carrito({
         0
       );
 
-      const response = await axios.post("http://localhost:8080/create_preference", {
+      const response = await axios.post("https://mercadopago-wheat.vercel.app/create_preference", {
         items: products.map((product) => ({
           title: product.Nameproduct,
           unit_price: product.price,
