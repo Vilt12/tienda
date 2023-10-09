@@ -5,10 +5,12 @@ import "./carrito.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faSquareMinus } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 //
 
 import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
-import axios from "axios";
+import axios, { all } from "axios";
 
 function Carrito({
   allProducts,
@@ -31,7 +33,7 @@ function Carrito({
   };
   
   useEffect(() => {
-    if (allProducts.length > 0) {
+    if (allProducts.length) {
       setNavbarOpen(true);
       setAnimateIcon(true);
     } else {
@@ -48,9 +50,37 @@ function Carrito({
     setTotal(total - product.price * product.quantity);
     setCountProducts(countProducts - product.quantity);
     setAllProducts(results);
+    actualizarPreferenceId();
     /* _______________________________________________________________Eliminar Productos________________________________________________________________________________________________________________ */
   };
+  const vaciarCarrito=(product)=>{
+       setAllProducts([]);
+       setTotal(0);
+       setCountProducts(0);
+      actualizarPreferenceId();
+  }
+  const quitarunProducto=(product)=>{
+    if(product.quantity>1){
+      const existingProductIndex = allProducts.findIndex(
+        (item) => item._id === product._id //busca un producto cuyo _id sea igual al _id del producto que se pasa como argumento.
+      );
+    
+      if (product.quantity>1) {
+        // El producto ya existe en el carrito, incrementa la cantidad
+        const updatedProducts = [...allProducts]; //Se crea una copia de la lista de todos los productos en el carrito utilizando el operador spread ([...allProducts]). Esto se hace para evitar modificar directamente el estado original sin crear una nueva instancia.
+        updatedProducts[existingProductIndex].quantity -= 1;
+    
+        setTotal(total - product.price);
+        setCountProducts(countProducts - 1);
+        setAllProducts(updatedProducts);
+        actualizarPreferenceId();
+      } 
+    
+    }else{
 
+    }
+
+  }
   const createPreference = async (products) => {
     try {
       const totalAmount = products.reduce(
@@ -75,14 +105,31 @@ function Carrito({
   }; 
   
   const handleBuy = async () => {
+
     setLoading(true);
     const id = await createPreference(allProducts);
     if (id) {
       setPreferenceId(id);
     
     }
+   
     setLoading(false)
   };
+
+
+
+  const actualizarPreferenceId = (id,product) => {
+    // Lógica para obtener o actualizar preferenceId
+  
+    if (!allProducts.length) {
+   
+      setPreferenceId(null);
+    } else {
+  
+     setPreferenceId(id)
+    }
+  };
+  
 
 
   /* _______________________________________________________________________________________________________________________________________________________________________________________________    */
@@ -113,11 +160,15 @@ function Carrito({
           </p> 
           <span>${total}</span>
         </div>  
+
+        <button className="button-Vaciar" animateIcon="bounce"    style={{ color: "#ffffff" }} onClick={()=>vaciarCarrito()}>Vaciar carrito</button>
+
         {allProducts.length ? (
-          <div className="box-carrito">
+         
+         <div className="box-carrito">
          
             {allProducts.map((product) => (
-            
+             
             <ul key={product.idProducto} className="carrito">
               <div className="box-carrito-imagen">
                   <li>
@@ -133,21 +184,23 @@ function Carrito({
              <li>{product.Nameproduct}</li>
              </div>
                <div className="box-price">
-<li>${product.quantity*product.price}</li>
+               <li>${product.quantity*product.price}</li>
                               
                
                </div>
-                
-             
+                <div className="box-buttons_carrito">
 
+              
+             
+  <button className="button-quitarunProducto"  onClick={() => quitarunProducto(product)}><FontAwesomeIcon icon={faSquareMinus} /></button>
                 
                  <button
                   className="button-delete"
                   onClick={() => onDeleteProduct(product)}
                 >
-                  <FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon>
+                  <FontAwesomeIcon icon={faXmark}></FontAwesomeIcon>
                 </button>
-
+               </div>
               </ul>
             ))}
           </div>
@@ -159,16 +212,24 @@ function Carrito({
         )}
         <div className="Box-info-product">
 
-      
-      {preferenceId?(
+         
+  
+      {preferenceId&&allProducts.length?(
+     
         <div className="button-mercado">
-               <button className="button-pay" onClick={handleBuy}>Actualizar</button>
+               <button className="button-pay" onClick={handleBuy}>Actualizar link</button>
           <Wallet className="enlace-mercado" initialization={{ preferenceId }} />
         </div>
-      ):(
+      ): allProducts.length?(
+      <>
         <button className="button-pay" onClick={handleBuy}>Pagar</button>
+      </>
         
+      ):(
+        <></>
       )}
+
+      
 
       {loading ? (
         <div className="event-loading"><h4>Cargando...</h4></div>

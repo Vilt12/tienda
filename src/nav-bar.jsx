@@ -8,34 +8,12 @@ import { Profile } from './Profile';
 import { useAuth0 } from '@auth0/auth0-react';
 import AgregarProducto from './AgregarProducto';
 import Administracion from './administracion';
-
+import PerfilesAdmin from './perfiles-admin';
 
 function Navbar(){
 
     const{isAuthenticated,user,loginWithRedirect,email}=useAuth0();  
   
-
-
-/* const { getAccessTokenSilently } = useAuth0();
-
-  // Obtener el token de acceso
-  const obtenerTokenDeAcceso = async () => {
-    try {
-      const accessToken = await getAccessTokenSilently();
-      console.log('Token de acceso:', accessToken); */
-
-
-  /*     // Puedes utilizar accessToken según tus necesidades
-    } catch (error) {
-      console.error('Error al obtener el token de acceso:', error);
-    }
-  };
-  obtenerTokenDeAcceso(); */
-
-  // Verificar si el usuario tiene un rol específico
-  
-
-
 
        return(
         <nav className="Barra__navegacion">
@@ -44,12 +22,12 @@ function Navbar(){
 
             
             <div className="Barra__navegacion-1">
-                <Link referrerPolicy="no-referrer" crossOrigin="anonymus" to="/"><img src="https://cdn-icons-png.flaticon.com/128/2935/2935500.png" alt="" width={"70px"} height={"70px"} /> </Link>
+                <Link referrerPolicy="no-referrer" crossOrigin="anonymus" to="/"><img src="https://images.vexels.com/media/users/3/223412/isolated/preview/bd3704cf52ba23499660b8bae7221daf-dise-o-plano-de-icono-de-tienda.png" alt="" width={"50px"} height={"50px"} /> </Link>
        
               {isAuthenticated?(<> <Link to="/menu">Menu</Link> </>):(<> <Link to="/noprofile">Menu</Link> </>)}
                <Link crossOrigin="anonymous" referrerPolicy="no-referrer" to="/contacto">Contacto</Link>
                
-               {(user&&user.email==="admin2125@gmail.com") ?(<><Link crossOrigin="anonymous" referrerPolicy="no-referrer" to="/administracion">Administracion</Link> <Link crossOrigin="anonymous" referrerPolicy="no-referrer" to="/AgregarProducto">Agregar producto</Link></>):(<></>)} 
+               {(user&&user.email==="admin2125@gmail.com") ?(<><Link crossOrigin="anonymous" referrerPolicy="no-referrer" to="/administracion">Administracion</Link>  <Link crossOrigin="anonymous" referrerPolicy="no-referrer" to="/AgregarProducto">Agregar producto</Link></>):(<></>)} 
          
              <div className="Barra__navegacion-usuario">
     

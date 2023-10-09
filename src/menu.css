@@ -13,7 +13,7 @@ color: #fff
 
 }
 .box-categories button{
-  font-size: 3vh;
+  font-size: 2.5vh;
   background: none;
   font-family: 'Open Sans', sans-serif;
   border: none;
@@ -24,6 +24,11 @@ color: #fff
   color: #ffffff;
  
 }
+
+.box-categories button:focus{
+ color: #00ffd9;
+ border-top: 2px solid #ffffff;
+}
 .box-categories button:hover{
 
  
@@ -32,6 +37,7 @@ color: #fff
   border-radius: 30px;
   border: 1px solid #ffffff;
 }
+
 .Super-box{
   display: flex;
   flex-wrap: wrap;
@@ -51,10 +57,10 @@ color: #fff
 border:2px solid #000000 ;
 margin-top: 12.5vh;
 
-    width: 75%;
+    width: 60%;
   /*   background: url("https://png.pngtree.com/background/20211215/original/pngtree-abstract-background-aesthetic-picture-image_1467995.jpg");
     background-size: cover; */
-    background: #0000005c;
+    background: #00000094;
     padding: 20px;
 
    
@@ -148,7 +154,7 @@ border-bottom: 1px solid #000000;
     font-size: 16px;
     font-family: 'Instrument Sans', sans-serif;
     color: #ffffff;
-    font-weight: 600;
+    font-weight: 500;
 }
 .price{
     font-size: 30px;
@@ -266,6 +272,10 @@ transition: 0.09s;
 
 
 @media (max-width:576px){
+ .Super-box{
+ padding-left: 3vh;
+ 
+ }
   .box-menu-2{
     border:2px solid #000000 ;
     margin-top: 15vh;
@@ -297,12 +307,13 @@ transition: 0.09s;
   .box-categories{
     display: flex;
     justify-content: space-around;
-    padding: 5vh;
+ 
   
   
   }
   .box-categories button{
-    font-size: 1.6vh;
+   
+    font-size: 1.5vh;
     font-family: 'Open Sans', sans-serif;
     padding: 5px;
    

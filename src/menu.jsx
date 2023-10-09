@@ -32,6 +32,7 @@ const Agregar = (product) => {
     setTotal(total + product.price);
     setCountProducts(countProducts + 1);
     setAllProducts(updatedProducts);
+    
   } else {
     // El producto no existe en el carrito, agrégalo como nuevo
     const newProduct = { ...product, quantity: 1 };
@@ -41,7 +42,11 @@ const Agregar = (product) => {
     setAllProducts([...allProducts, newProduct]);
   }
 };
+
+
+
 const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
+
 
 const cambiarCategoria = (categories) => {
   setCategoriaSeleccionada(categories);
@@ -60,13 +65,14 @@ const productosFiltrados = categoriaSeleccionada
  return(
   <> 
   <div className='box-categories'>
-  
+
+      <button onClick={() => cambiarCategoria('')}>Todos</button>
       <button onClick={() => cambiarCategoria('Cafe')}>Cafe</button>
       <button onClick={() => cambiarCategoria('Comida')}>Comida</button>
       <button onClick={() => cambiarCategoria('Bebida')}>Bebidas</button>
-      <button onClick={() => cambiarCategoria('')}>Todos</button>
       <button onClick={() => cambiarCategoria('Postre')}>Postres</button>
       <button onClick={() => cambiarCategoria('Promocion')}>Promociones</button>
+    
    
   </div>
    
@@ -79,15 +85,29 @@ const productosFiltrados = categoriaSeleccionada
         <img src={producto.urlImage} height="180" width="180" alt="" />
        </div>
         <div className="box-description">
-          <h4>{producto.Nameproduct}</h4>
+        
+          {producto.quantity===0?(
+           
+           <h4>No hay Stock</h4>
+          ):(
+           <h4> {producto.Nameproduct}</h4>
+          )} 
+            
+           
+        
           <div className="box-description2">
             <p className="description">{producto.description}</p>
           </div>
           <div className="box-price-button">
             <p className="price">${producto.price}</p>
-            <button onClick={() => Agregar(producto)} className="button-29">
+           {producto.quantity===0?(
+           
+            <></>
+           ):(
+             <button onClick={() => Agregar(producto)} className="button-29">
               +
             </button>
+           )} 
           </div>
         </div>
       </div>
@@ -108,8 +128,6 @@ const [allProducts, setAllProducts] = useState([]);
 const [total, setTotal] = useState(0);
 const [countProducts, setCountProducts] = useState(0);
 const [productos, setProductos] = useState([]);
-
-   
 const{isAuthenticated,user,email}=useAuth0();  
   
 useEffect(() => {
@@ -160,7 +178,9 @@ useEffect(() => {
               countProducts={countProducts}
               setCountProducts={setCountProducts}
               total={total}
-              setTotal={setTotal}/>
+              setTotal={setTotal}   
+              />
+          
           <div className='Bordercito'>
       
        
@@ -176,7 +196,8 @@ useEffect(() => {
               countProducts={countProducts}
               setCountProducts={setCountProducts}
               total={total}
-              setTotal={setTotal} />
+              setTotal={setTotal}
+               />
                    
                    
          </div>

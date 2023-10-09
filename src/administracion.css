@@ -49,6 +49,9 @@
    font-family: 'Play', sans-serif;
 
 }
+.table_info_descripcion {
+    width: 50%;
+}
 
 .table_info td{
     background: #EEEEEE;
@@ -65,6 +68,18 @@
     transition: 0.2s;
     color: #ffffff;
 }
+
+.table_info 
+.td-con-stock {
+    background: rgb(94, 255, 0);
+
+  }
+  
+.table_info
+.td-sin-stock {
+    background: red; 
+   
+  }
 
 .box-button-action button{
 

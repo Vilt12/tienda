@@ -70,7 +70,7 @@ border-bottom: 1px solid #000000;
 .section__box-img img{
    margin-top: 5vh;
     width: 600px;
-    height: 600px;  
+    height:600px;  
     animation: levitacion 1s infinite alternate;
   
 }

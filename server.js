@@ -70,7 +70,7 @@ app.listen(8080, () => {
 
 
 //Obtener Historial de transacciones de mercado pago 
-/* const axios = require("axios");
+const axios = require("axios");
 
 // Tu access token de Mercado Pago
 const accessToken = "APP_USR-2050192253529060-082910-7aca82a1134f8547b624bd3dfdcbf6d6-1463144691";
@@ -91,15 +91,18 @@ async function obtenerHistorialDeTransacciones() {
 
     // Procesa la respuesta
     const transacciones = response.data.results;
-
+  console.log(transacciones);
     // Itera sobre las transacciones y obtén información adicional
     transacciones.forEach((transaccion) => {
       const cantidadDinero = transaccion.transaction_amount;
-      const nombreUsuario = transaccion.payer.first_name;
+      const nombreUsuario = transaccion.payer.email;
+	  const description= transaccion.description;
+
 
       // Hacer algo con los datos, como mostrarlos o almacenarlos
       console.log(`Cantidad de dinero: ${cantidadDinero}`);
       console.log(`Nombre de usuario: ${nombreUsuario}`);
+	  console.log(`Descripcion: ${description}`);
     });
   } catch (error) {
     console.error("Error al obtener el historial de transacciones:", error);
@@ -107,4 +110,4 @@ async function obtenerHistorialDeTransacciones() {
 }
 
 // Llama a la función para obtener el historial de transacciones
-obtenerHistorialDeTransacciones(); */
+obtenerHistorialDeTransacciones();

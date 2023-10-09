@@ -26,9 +26,9 @@ function Administracion() {
 const [productoEditando, setProductoEditando] = useState(false);
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
   const [categories,setCategories]=useState("")
-
-
-  
+ const [ordenarPrecio, setOrdenarPrecio] = useState(null);
+const [Stock,SetStock]=useState(0);
+const[quantity,setQuantity]=useState();
   useEffect(() => {
     // Realiza una solicitud GET al servidor para obtener la lista de productos
     axios.get("https://backend-one-liart.vercel.app/api/productos/productos")
@@ -88,18 +88,21 @@ const [productoEditando, setProductoEditando] = useState(false);
 
 
  
-  const cambiarCategoria = (categories) => {
+  const cambiarCategoria = (categories,quantity) => {
     setCategoriaSeleccionada(categories);
-    
+    SetStock(quantity)
   };
   
+  
   // Filtra los productos por categoría seleccionada
-  const productosFiltrados = categoriaSeleccionada
-    ? productos.filter((producto) => producto.categories === categoriaSeleccionada)
-    : productos;
-  
+  const productosFiltrados = productos.filter((producto) => {
+    const categoriaCoincide = !categoriaSeleccionada || producto.categories === categoriaSeleccionada;
+    const stockCoincide = Stock === '' || (Stock === '1' && producto.quantity === 1) || (Stock === '0' && producto.quantity !== 1);
+    return categoriaCoincide && stockCoincide;
+  });
    
-  
+   
+
 
 return(
   
@@ -130,12 +133,27 @@ return(
     <option value="Promocion">Promocion</option>
 </select></th>
     </tr>
+    <tr>
+      
+    </tr>
     <tr>  
       <th>Categoria</th>
       <th>Imagen del producto</th>
       <th>Nombre del producto</th>
       <th>Precio</th>
       <th className="table_info_descripcion">Descripción</th>
+     
+      <th>
+        <th><select type="number" value={quantity} onChange={(e) =>{SetStock(e.target.value)}} >
+    <option value="">Mostrar por Stock</option>
+    <option value="1">Hay stock</option>
+    <option value="0">No hay stock</option>
+    <option value="">Todos</option>
+</select></th>
+
+     Stock
+      
+      </th>
       <th>Acciones</th>
     </tr>
   </thead>
@@ -146,8 +164,13 @@ return(
         <td><img src={producto.urlImage} alt="" width={"80px"} height={"80px"} /></td>
         <td>{producto.Nameproduct}</td>
         <td>${producto.price}</td>
-       
-        <td>{producto.description}</td> 
+        <td >{producto.description}</td>    
+        <td className={producto.quantity === 1 ? 'td-con-stock' : 'td-sin-stock'} >
+          {producto.quantity===1?(
+          <p>Hay stock</p>
+        ):(
+          <p>No hay stock</p>
+        )}</td>
         <td className="box-button-action">
           <button className="box-button-action-delete" onClick={() => eliminarProducto(producto._id)}>Eliminar</button>
           <button className="box-button-action-edit"  onClick={() => setProductoEditando(producto)}>Editar</button>
@@ -197,7 +220,15 @@ return(
     <option value="Postre">Postres</option>
     <option value="Promocion">Promocion</option>
 </select>
-    
+
+    <label >Stock</label>
+    <select type="number" value={productoEditando.quantity } onChange={(e) =>{handleInputChange( "quantity",e.target.value)}}>
+    <option value="1">Hay stock</option>
+    <option value="0">No hay stock</option>
+    </select>
+
+
+
       <label>Descripción:</label>
       <textarea
         value={productoEditando.description}
