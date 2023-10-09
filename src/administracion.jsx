@@ -27,7 +27,7 @@ const [productoEditando, setProductoEditando] = useState(false);
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
   const [categories,setCategories]=useState("")
  const [ordenarPrecio, setOrdenarPrecio] = useState(null);
-const [Stock,SetStock]=useState(0);
+const [Stock,SetStock]=useState("");
 const[quantity,setQuantity]=useState();
   useEffect(() => {
     // Realiza una solicitud GET al servidor para obtener la lista de productos
