@@ -143,7 +143,7 @@ function Carrito({
         >
           <FontAwesomeIcon
             icon={faShoppingCart}
-            style={{ color: "#000000" }}
+            style={{ color: "#ffffff" }}
             className={animateIcon ? "animate" : ""}
           ></FontAwesomeIcon>
         </button>
@@ -172,7 +172,7 @@ function Carrito({
             <ul key={product.idProducto} className="carrito">
               <div className="box-carrito-imagen">
                   <li>
-                  <img src={product.urlImage} height="80" width="80" alt="" />
+                  <img src={product.urlImage} height="70" width="70" alt="" />
                 </li>
               </div>
                    <div className="box-quantity">

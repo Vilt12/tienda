@@ -49,6 +49,9 @@
    font-family: 'Play', sans-serif;
 
 }
+.table_info th select{
+    cursor: pointer;
+}
 .table_info_descripcion {
     width: 50%;
 }

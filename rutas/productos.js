@@ -48,7 +48,7 @@ router.post("/agregarProducto", async (req, res) => {
       // Guarda el nuevo producto en la base de datos
       await nuevoProducto.save();
   //Envía una respuesta JSON indicando el éxito o el error.
-      res.status(201).json({ mensaje: "Producto agregado con éxito" });
+      res.status(200).json({ mensaje: "Producto agregado con éxito" });
     } catch (error) {
       console.error("Error al agregar el producto:", error);
       res.status(500).json({ error: "Ocurrió un error al agregar el producto" });

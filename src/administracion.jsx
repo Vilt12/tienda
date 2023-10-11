@@ -22,13 +22,15 @@ function Administracion() {
 
 
 
-  const [productos, setProductos] = useState([]);
+const [productos, setProductos] = useState([]);
 const [productoEditando, setProductoEditando] = useState(false);
-  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
-  const [categories,setCategories]=useState("")
- const [ordenarPrecio, setOrdenarPrecio] = useState(null);
+const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(null);
+const [categories,setCategories]=useState("")
+const [ordenarPrecio, setOrdenarPrecio] = useState(null);
 const [Stock,SetStock]=useState("");
 const[quantity,setQuantity]=useState();
+const [orden, setOrden] = useState('asc'); 
+
   useEffect(() => {
     // Realiza una solicitud GET al servidor para obtener la lista de productos
     axios.get("https://backend-one-liart.vercel.app/api/productos/productos")
@@ -99,6 +101,14 @@ const[quantity,setQuantity]=useState();
     const categoriaCoincide = !categoriaSeleccionada || producto.categories === categoriaSeleccionada;
     const stockCoincide = Stock === '' || (Stock === '1' && producto.quantity === 1) || (Stock === '0' && producto.quantity !== 1);
     return categoriaCoincide && stockCoincide;
+  })
+  .sort((productoA, productoB) => {
+    if (orden === 'asc') {
+      return productoA.price - productoB.price;
+    } else if (orden === 'desc') {
+      return productoB.price - productoA.price;
+    }
+    return 0; // En caso de que no se especifique 'asc' o 'desc', no se aplica orden
   });
    
    
@@ -122,8 +132,10 @@ return(
 
   
   <thead>
-    <tr>
-      <th><select type="text" value={categories} onChange={(e) =>{setCategoriaSeleccionada(e.target.value)}} >
+    
+    <tr>  
+      <th>     
+        <th><select type="text" value={categories} onChange={(e) =>{setCategoriaSeleccionada(e.target.value)}} >
     <option value="">Mostrar por categoria</option>
     <option value="Cafe">Cafe</option>
     <option value="Comida">Comida</option>
@@ -131,16 +143,20 @@ return(
     <option value="Bebida">Bebidas</option>
     <option value="Postre">Postres</option>
     <option value="Promocion">Promocion</option>
-</select></th>
-    </tr>
-    <tr>
-      
-    </tr>
-    <tr>  
-      <th>Categoria</th>
+</select>
+</th>
+      Categoria</th>
       <th>Imagen del producto</th>
       <th>Nombre del producto</th>
-      <th>Precio</th>
+      <th>
+        <th><select type="text" value={orden} onChange={(e) =>{setOrden(e.target.value)}} >
+    <option value="">Ordenar por Precio</option>
+    <option value="asc">Menor a mayor</option>
+    <option value="desc">Mayor a menor</option>
+    <option value="">Todos</option>
+</select></th>
+
+        Precio</th>
       <th className="table_info_descripcion">Descripción</th>
      
       <th>
