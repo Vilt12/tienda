@@ -53,7 +53,7 @@ function AgregarP() {
     //Realizamos una solicitud HTTP POST a la Ruta ("/api/producto/AgregarProducto") para agregar el producto a la base de datos uwu
         axios.post("https://backend-one-liart.vercel.app/api/productos/AgregarProducto", producto)
         .then((response) => {
-          alert(response);
+          alert(response.data.mensaje);
         }) 
           .catch((err) => {
             console.log(err);
