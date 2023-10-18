@@ -84,7 +84,7 @@ const mercadoPagoAPI = axios.create({
 });
 
 // Ejemplo: Obtener historial de transacciones
-async function obtenerHistorialDeTransacciones() {
+ async function obtenerHistorialDeTransacciones() {
   try {
     // Realiza una solicitud GET para obtener las transacciones
     const response = await mercadoPagoAPI.get("/payments/search");
@@ -92,22 +92,23 @@ async function obtenerHistorialDeTransacciones() {
     // Procesa la respuesta
     const transacciones = response.data.results;
   console.log(transacciones);
+  
+    let description = "";
     // Itera sobre las transacciones y obtén información adicional
     transacciones.forEach((transaccion) => {
       const cantidadDinero = transaccion.transaction_amount;
-      const nombreUsuario = transaccion.payer.email;
-	  const description= transaccion.description;
-
-
+      const GmailUsuario = transaccion.payer.email;
+	  const primerNombre= transaccion.payer.first_name;
+	  const Apellido= transaccion.payer.last_name;
+	  const productosComprados = transaccion.description;
       // Hacer algo con los datos, como mostrarlos o almacenarlos
-      console.log(`Cantidad de dinero: ${cantidadDinero}`);
-      console.log(`Nombre de usuario: ${nombreUsuario}`);
-	  console.log(`Descripcion: ${description}`);
+	  description += `Nombre: ${primerNombre}\nApellido: ${Apellido}\nGmail: ${GmailUsuario}\nCantidad de dinero: ${cantidadDinero}\nProductos: ${productosComprados}\n\n`;
     });
+	console.log(description);
   } catch (error) {
     console.error("Error al obtener el historial de transacciones:", error);
   }
 }
 
 // Llama a la función para obtener el historial de transacciones
-obtenerHistorialDeTransacciones();
+ obtenerHistorialDeTransacciones();

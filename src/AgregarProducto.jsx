@@ -25,7 +25,7 @@ function AgregarProducto() {
 const [Nameproduct,setNameproduct]=useState("")
 const [price,setprice]=useState("")
 const [description,setdescription]=useState("")
-const [quantity]=useState(1)
+const [quantity]=useState()
 const [urlImage,seturlImage]=useState("")
 const [categories,setCategories]=useState("")
 //
@@ -35,8 +35,8 @@ function AgregarP() {
   //Establecemos una condicion, si los datos que quiere enviar el usuario estan vacios, le sandra un mensaje para que los envie de forma correcta :D 
     if ((!Nameproduct || !description || !price || !urlImage ||!categories) ) {
         alert("Por favor, complete todos los campos");
-      } else if(price<0){
-        alert("No puede poner valores negativos")
+      }  else if (price < 0 || price.toString().includes("e")) {
+        alert("No puede poner valores negativos ni la letra 'e' en el precio");
       }
       else {
         //Si todo sale bien uwu, se crea el objeto(producto) con los valores enviados :3
@@ -48,13 +48,13 @@ function AgregarP() {
           urlImage: urlImage,
           categories:categories,
         };
-    //
+   
+        //
     //Realizamos una solicitud HTTP POST a la Ruta ("/api/producto/AgregarProducto") para agregar el producto a la base de datos uwu
-        axios
-          .post("https://backend-one-liart.vercel.app/api/productos/AgregarProducto", producto)
-          .then((response) => {
-            alert(response);
-          }) 
+        axios.post("https://backend-one-liart.vercel.app/api/productos/AgregarProducto", producto)
+        .then((response) => {
+          alert(response);
+        }) 
           .catch((err) => {
             console.log(err);
           });
@@ -79,6 +79,7 @@ function AgregarP() {
         <input placeholder="Precio del producto"  type="number" value={price} onChange={(e)=>{setprice(e.target.value)}} />
       
         <input placeholder="Descripcion del producto"  type="text" value={description} onChange={(e)=>{setdescription(e.target.value)}} />
+
 
         <select type="text" value={categories} onChange={(e) =>{setCategories(e.target.value)}} >
     <option value="">Seleciona una categoria</option>

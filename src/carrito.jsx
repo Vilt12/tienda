@@ -69,7 +69,7 @@ function Carrito({
         // El producto ya existe en el carrito, incrementa la cantidad
         const updatedProducts = [...allProducts]; //Se crea una copia de la lista de todos los productos en el carrito utilizando el operador spread ([...allProducts]). Esto se hace para evitar modificar directamente el estado original sin crear una nueva instancia.
         updatedProducts[existingProductIndex].quantity -= 1;
-    
+        
         setTotal(total - product.price);
         setCountProducts(countProducts - 1);
         setAllProducts(updatedProducts);
@@ -95,8 +95,9 @@ function Carrito({
           quantity: product.quantity,
         })),
         totalAmount: totalAmount,
+       
       });
-
+   
       const { id } = response.data;
       return id;
     } catch (error) {
@@ -161,7 +162,7 @@ function Carrito({
           <span>${total}</span>
         </div>  
 
-        <button className="button-Vaciar" animateIcon="bounce"    style={{ color: "#ffffff" }} onClick={()=>vaciarCarrito()}>Vaciar carrito</button>
+        <button className="button-Vaciar" style={{ color: "#ffffff" }} onClick={()=>vaciarCarrito()}>Vaciar carrito</button>
 
         {allProducts.length ? (
          

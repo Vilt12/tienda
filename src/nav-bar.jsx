@@ -8,7 +8,7 @@ import { Profile } from './Profile';
 import { useAuth0 } from '@auth0/auth0-react';
 import AgregarProducto from './AgregarProducto';
 import Administracion from './administracion';
-import PerfilesAdmin from './perfiles-admin';
+
 
 function Navbar(){
 
