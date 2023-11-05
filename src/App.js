@@ -8,7 +8,7 @@ import NoProfile from './noprofile';
 import AgregarProducto from './AgregarProducto';
 import Administracion from './administracion';
 
-
+import Error from './error';
 
 function App() {
   
@@ -28,7 +28,7 @@ function App() {
         <Route path="/contacto" element={<Contacto/>}></Route>
         <Route path="/administracion" element={<Administracion/>}/>
         <Route path="/AgregarProducto" element={<AgregarProducto/>}/>
-
+        <Route path="/error" element={<Error/>}/>
       </Routes>
      
  </>
