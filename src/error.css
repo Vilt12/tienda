@@ -51,3 +51,24 @@
     text-decoration: none;
   
 }
+@media (max-width:920px){
+   
+
+    .body-error-cuadro{
+        backdrop-filter: blur(20px);
+        width: 85%;
+        box-shadow: 0 0vh 1.5vh #000000;
+     
+    }
+}
+
+@media (max-width:576px){
+   
+
+    .body-error-cuadro{
+        backdrop-filter: blur(20px);
+        width: 85%;
+        box-shadow: 0 0vh 1.5vh #000000;
+     
+    }
+}
