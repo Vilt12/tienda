@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -14,7 +15,7 @@ justify-content: center;
     width: 100%;
     border-bottom: 1px solid #ffffff;
     box-shadow: 0 2px 5px #000000;
-    font-family: 'Arimo', sans-serif;
+    font-family: "Work Sans", sans-serif;
     animation-name: navb;
     animation-duration: 0.5s;
     z-index: 900;
@@ -109,6 +110,8 @@ height: 30px;
     color: #ffffff;
     cursor: pointer;
    text-shadow: 1px 2px 0px #000000;
+   font-family: "Work Sans", sans-serif;
+   border-bottom: 1px solid #ffffff;
 }
 .boton-iniciar:hover{
     text-shadow: 0 0 3px #ffffff;
@@ -236,6 +239,7 @@ height: 30px;
             color: #ffffff;
             cursor: pointer;
            text-shadow: 1px 2px 0px #000000;
+           font-family: "Work Sans", sans-serif;
         }
        
 }

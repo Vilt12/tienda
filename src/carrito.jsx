@@ -34,10 +34,10 @@ function Carrito({
   
   useEffect(() => {
     if (allProducts.length) {
-      setNavbarOpen(true);
+    
       setAnimateIcon(true);
     } else {
-      setNavbarOpen(false);
+     
       setAnimateIcon(false);
     }
   }, [allProducts]);
@@ -160,10 +160,18 @@ function Carrito({
             Total:
           </p> 
           <span>${total}</span>
-        </div>  
+        </div> 
+        <div>
+        <button style={{ color: "#ffffff" }} className="button-cerrar" onClick={toggleNavbar}>X</button>
+          </div> 
+        <div>
 
-        <button className="button-Vaciar" style={{ color: "#ffffff" }} onClick={()=>vaciarCarrito()}>Vaciar carrito</button>
+           <button className="button-Vaciar" style={{ color: "#ffffff" }} onClick={()=>vaciarCarrito()}>Vaciar carrito</button>
+  
 
+        </div>
+
+       
         {allProducts.length ? (
          
          <div className="box-carrito">

@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 @keyframes levitacion {
     0%{
@@ -38,6 +39,7 @@ border-bottom: 1px solid #000000;
    font-size: 6vh;  
    font-family: 'Oswald', sans-serif;
  border: #000000;
+
 }
 .section__box-1 b{
     color: #ffbf00;
@@ -71,7 +73,7 @@ border-bottom: 1px solid #000000;
    margin-top: 5vh;
     width: 600px;
     height:600px;  
-    animation: levitacion 1s infinite alternate;
+    animation: levitacion 2s infinite alternate;
   
 }
 /* Estilos para pantallas medianas */
