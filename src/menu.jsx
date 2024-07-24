@@ -130,7 +130,7 @@ const [countProducts, setCountProducts] = useState(0);
 const [productos, setProductos] = useState([]);
 const{isAuthenticated,user,email}=useAuth0();  
   
-useEffect(() => {
+/* useEffect(() => {
  if (isAuthenticated) {
   
  } else {
@@ -139,7 +139,7 @@ useEffect(() => {
 }, []);
 
 
-
+ */
 
 
  useEffect(() => {

@@ -122,7 +122,7 @@ function Carrito({
   const actualizarPreferenceId = (id,product) => {
     // Lógica para obtener o actualizar preferenceId
   
-    if (!allProducts.length) {
+    if (!allProducts.length ) {
    
       setPreferenceId(null);
     } else {
