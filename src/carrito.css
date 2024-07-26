@@ -17,6 +17,7 @@
   }
   
   .navbar {
+  
     width: 0;
     height: 0;
     position: fixed;
@@ -26,25 +27,22 @@
     overflow-x: hidden;
     transition: 0.3s;
     border: 1px solid #ffffff;
-    opacity: 0;
-  
- 
-   
 backdrop-filter: blur(20px);
+display: none;
 
   }
   
   .navbar.open {
     width: 650px;
     height: 90%;
-  opacity: 1;
+    display: block;
   
   z-index: 9999;
   }
   .navbar .cerrar{
-  
+   display: none;
     width: 0;
-    opacity: 0;
+
     z-index: 0;
    
   }
