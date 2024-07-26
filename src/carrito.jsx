@@ -34,7 +34,7 @@ function Carrito({
   
   useEffect(() => {
     if (allProducts.length) {
-    
+      actualizarPreferenceId()
       setAnimateIcon(true);
     } else {
      
@@ -161,14 +161,13 @@ function Carrito({
           </p> 
           <span>${total}</span>
         </div> 
-        <div>
-        <button style={{ color: "#ffffff" }} className="button-cerrar" onClick={toggleNavbar}>X</button>
-          </div> 
-        <div>
+       
+        <div className="Box-vaciar-cerrar">
 
            <button className="button-Vaciar" style={{ color: "#ffffff" }} onClick={()=>vaciarCarrito()}>Vaciar carrito</button>
   
-
+        <button style={{ color: "#ffffff" }} className="button-cerrar" onClick={toggleNavbar}>Cerrar carrito</button>
+          
         </div>
 
        
@@ -226,7 +225,7 @@ function Carrito({
       {preferenceId&&allProducts.length?(
      
         <div className="button-mercado">
-               <button className="button-pay" onClick={handleBuy}>Actualizar link</button>
+             
           <Wallet className="enlace-mercado" initialization={{ preferenceId }} />
         </div>
       ): allProducts.length?(
