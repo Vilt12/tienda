@@ -7,7 +7,7 @@ import Contacto from './contacto';
 import NoProfile from './noprofile';
 import AgregarProducto from './AgregarProducto';
 import Administracion from './administracion';
-
+import Historial from './historial';
 import Error from './error';
 
 function App() {
@@ -28,6 +28,7 @@ function App() {
         <Route path="/contacto" element={<Contacto/>}></Route>
         <Route path="/administracion" element={<Administracion/>}/>
         <Route path="/AgregarProducto" element={<AgregarProducto/>}/>
+        <Route path="/historial" element={<Historial/>}/>
         <Route path="/error" element={<Error/>}/>
       </Routes>
      

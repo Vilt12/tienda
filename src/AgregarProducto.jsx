@@ -5,6 +5,7 @@ import Navbar from "./nav-bar";
 import "./Agregarproducto.css"
 import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect } from "react";
+import { Toaster, toast } from 'sonner'
 function AgregarProducto() {
    
   const{isAuthenticated,user,email}=useAuth0();  
@@ -34,9 +35,9 @@ function AgregarP() {
   
   //Establecemos una condicion, si los datos que quiere enviar el usuario estan vacios, le sandra un mensaje para que los envie de forma correcta :D 
     if ((!Nameproduct || !description || !price || !urlImage ||!categories) ) {
-        alert("Por favor, complete todos los campos");
+      toast.warning("Por favor, complete todos los campos");
       }  else if (price < 0 || price.toString().includes("e")) {
-        alert("No puede poner valores negativos ni la letra 'e' en el precio");
+        toast.warning("No puede poner valores negativos ni la letra 'e' en el precio");
       }
       else {
         //Si todo sale bien uwu, se crea el objeto(producto) con los valores enviados :3
@@ -53,7 +54,7 @@ function AgregarP() {
     //Realizamos una solicitud HTTP POST a la Ruta ("/api/producto/AgregarProducto") para agregar el producto a la base de datos uwu
         axios.post("https://backend-one-liart.vercel.app/api/productos/AgregarProducto", producto)
         .then((response) => {
-          alert(response.data.mensaje);
+          toast.success("Producto agregado correctamente")
         }) 
           .catch((err) => {
             console.log(err);
@@ -90,6 +91,7 @@ function AgregarP() {
     <option value="Promocion">Promocion</option>
 </select>
        <div className="box-agregar-button">
+       <Toaster richColors position="top-center"  ></Toaster>
 <button onClick={AgregarP}>Agregar Producto</button>
        </div>
         
