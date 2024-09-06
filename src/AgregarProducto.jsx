@@ -66,6 +66,7 @@ function AgregarP() {
     return(
         <>
 <Navbar></Navbar>
+<Toaster richColors position="top-center"  ></Toaster>
 <div className="box-agregarProducto">
 
 
@@ -90,7 +91,7 @@ function AgregarP() {
     <option value="Postre">Postres</option>
     <option value="Promocion">Promocion</option>
 </select>   
-<Toaster richColors position="top-center"  ></Toaster>
+
        <div className="box-agregar-button">
     
 <button onClick={AgregarP}>Agregar Producto</button>

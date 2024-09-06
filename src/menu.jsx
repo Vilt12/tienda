@@ -65,7 +65,8 @@ const productosFiltrados = categoriaSeleccionada
 
  
  return(
-  <> 
+  <>  
+   <Toaster richColors position="top-center" />
   <div className='box-categories'>
 
       <button onClick={() => cambiarCategoria('')}>Todos</button>
@@ -108,7 +109,7 @@ const productosFiltrados = categoriaSeleccionada
             <></>
            ):(
                <>
-            <Toaster richColors position="top-center" />
+          
              <button onClick={() => Agregar(producto)} className="button-29">
               +
             </button>
