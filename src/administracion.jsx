@@ -189,6 +189,7 @@ function Administracion() {
                       <p>No hay stock</p>
                     )}</td>
                   <td className="box-button-action">
+                    <Toaster richColors position="top-center"></Toaster>
                     <button className="box-button-action-delete" onClick={() => eliminarProducto(producto._id)}>Eliminar</button>
                     <button className="box-button-action-edit" onClick={() => setProductoEditando(producto)}>Editar</button>
                   </td>

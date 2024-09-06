@@ -8,6 +8,7 @@ import Carrito from './carrito';
 import { useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import Foother from './foother';
+import { Toaster,toast } from 'sonner';
 
  export function ProductList({ allProducts,
   setAllProducts,
@@ -32,6 +33,7 @@ const Agregar = (product) => {
     setTotal(total + product.price);
     setCountProducts(countProducts + 1);
     setAllProducts(updatedProducts);
+    toast.success("Producto agregado al carrito")
     
   } else {
     // El producto no existe en el carrito, agrégalo como nuevo
@@ -99,14 +101,18 @@ const productosFiltrados = categoriaSeleccionada
             <p className="description">{producto.description}</p>
           </div>
           <div className="box-price-button">
+            
             <p className="price">${producto.price}</p>
            {producto.quantity===0?(
            
             <></>
            ):(
+               <>
+            <Toaster richColors position="top-center" />
              <button onClick={() => Agregar(producto)} className="button-29">
               +
             </button>
+            </>
            )} 
           </div>
         </div>
